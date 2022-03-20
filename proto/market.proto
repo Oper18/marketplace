@@ -1,0 +1,218 @@
+syntax = "proto3";
+
+option go_package = "./proto;market";
+
+package messenger;
+
+message CategoriesRequest {
+  int64 limit = 1;
+  int64 offset = 2;
+}
+
+message CategoryItemResponse {
+  int64 id = 1;
+  string name = 2;
+  string created_at = 3;
+  string updated_at = 4;
+}
+
+message CategoriesResponse {
+  int64 count = 1;
+  repeated CategoryItemResponse items = 2;
+}
+
+service GetCategories {
+  rpc GetCats(CategoriesRequest) returns (CategoriesResponse) {}
+}
+
+message CategoryManageRequest {
+  int64 id = 1;
+  string name = 2;
+}
+
+service ManageCategory {
+  rpc ManageCats(CategoryManageRequest) returns (CategoryItemResponse) {}
+}
+
+message BrandRequest {
+  int64 limit = 1;
+  int64 offset = 2;
+}
+
+message BrandItemResponse {
+  int64 id = 1;
+  string name = 2;
+  string logo = 3;
+  string created_at = 4;
+  string updated_at = 5;
+}
+
+message BrandResponse {
+  int64 count = 1;
+  repeated BrandItemResponse items = 2;
+}
+
+service GetBrandsNames {
+  rpc GetBrands(BrandRequest) returns (BrandResponse) {}
+}
+
+message BrandManageRequest {
+  int64 id = 1;
+  string name = 2;
+  bytes logo = 3;
+  string ext = 4;
+}
+
+service ManageBrandsNames {
+  rpc ManageBrands(BrandManageRequest) returns (BrandItemResponse) {}
+}
+
+message ProductRequest {
+  int64 limit = 1;
+  int64 offset = 2;
+  int64 brand_name = 3;
+  int64 category = 4;
+  int64 sex = 5;
+  int64 age = 6;
+  string name = 7;
+  string article_number = 8;
+  int64 id = 9;
+  int64 rent = 10;
+  int64 service = 11;
+}
+
+message ProductResponse {
+  int64 id = 1;
+  BrandItemResponse brand_name = 2;
+  repeated CategoryItemResponse category = 3;
+  string name = 4;
+  string description = 5;
+  string color = 6;
+  int64 sex = 7;
+  int64 age = 8;
+  string article_number = 9;
+  float price = 10;
+  string currency = 11;
+  float discount = 12;
+  bool rent = 13;
+  bool service = 14;
+  repeated string gallery = 15;
+  string created_at = 16;
+  string updated_at = 17;
+}
+
+message ProductListResponse {
+  int64 count = 1;
+  repeated ProductResponse items = 2;
+}
+
+service GetProducts {
+  rpc GetProds(ProductRequest) returns (ProductListResponse) {}
+}
+
+message ProductGalleryRequest {
+  string ext = 1;
+  bytes bytes = 2;
+}
+
+message ProductManageRequest {
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  int64 brand_name = 4;
+  repeated int64 category = 5;
+  string color = 6;
+  int64 sex = 7;
+  int64 age = 8;
+  string article_number = 9;
+  float price = 10;
+  string currency = 11;
+  float discount = 12;
+  bool rent = 13;
+  bool service = 14;
+  repeated ProductGalleryRequest pgr = 15;
+  repeated string eg = 16;
+}
+
+service ManageProducts {
+  rpc ManageProds(ProductManageRequest) returns (ProductResponse) {}
+}
+
+message ProductItemsRequest {
+  int64 limit = 1;
+  int64 offset = 2;
+  int64 product = 3;
+  string size = 4;
+  string serial_number = 5;
+  bool sold = 6;
+}
+
+message ProductItemResponse {
+  int64 id = 1;
+  ProductResponse product = 2;
+  string size = 3;
+  string serial_number = 4;
+  bool sold = 5;
+  int64 buyer = 6;
+  string rent_time_start = 7;
+  string rent_time_stop = 8;
+}
+
+message ProductItemsListResponse {
+  int64 count = 1;
+  repeated ProductItemResponse items = 2;
+}
+
+service GetProductsItems {
+  rpc GetProdItems(ProductItemsRequest) returns (ProductItemsListResponse) {}
+}
+
+message ProductItemCreateRequest {
+  int64 id = 1;
+  string size = 2;
+  string serial_number = 3;
+  bool sold = 4;
+  int64 buyer = 5;
+  string rent_time_start = 6;
+  string rent_time_stop = 7;
+}
+
+message ProductItemsListCreateRequest {
+  int64 product = 1;
+  repeated ProductItemCreateRequest items = 2;
+}
+
+message ProductItemsCreateResponse {
+  repeated ProductItemResponse arr = 1;
+}
+
+service CreateProductsItems {
+  rpc CreateProdItems(ProductItemsListCreateRequest) returns (ProductItemsCreateResponse) {}
+}
+
+message ProductItemBuyRequest {
+  int64 item_pk = 1;
+  int64 buyer = 2;
+  string rent_time_start = 3;
+  string rent_time_stop = 4;
+}
+
+message ProductItemBuyResponse {
+  bool message = 1;
+}
+
+service BuyProductItem {
+  rpc BuyProdItem(ProductItemBuyRequest) returns (ProductItemBuyResponse) {}
+}
+
+message ProductItemRemoveRequest {
+  int64 item_pk = 1;
+}
+
+message ProductItemRemoveResponse {
+  bool message = 1;
+}
+
+service RemoveProductItem {
+  rpc RemoveProdItem(ProductItemRemoveRequest) returns (ProductItemRemoveResponse) {}
+}

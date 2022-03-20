@@ -1,0 +1,6 @@
+venv-market/
+*.pyc
+static/
+__pycache__/
+.idea/
+.env
