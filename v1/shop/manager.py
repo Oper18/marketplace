@@ -148,7 +148,7 @@ async def get_product_items(
     if serial_number:
         items = items.filter(serial_number_icontains=serial_number)
 
-    items = await items.all().limit(limit).offset(offset)
+    items = await items.all().limit(limit).offset(offset).order_by('size')
 
     return {
         "count": count,
