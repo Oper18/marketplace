@@ -1,5 +1,6 @@
 import os
 import uuid
+import dateutil.parser
 
 from typing import List, Dict
 
@@ -86,7 +87,7 @@ async def get_products(
     rent: bool = None,
     service: bool = None,
 ):
-    if service is not None:
+    if service is None:
         count = await Product.all().count()
     else:
         count = await Product.filter(service=service).all().count()
@@ -111,8 +112,8 @@ async def get_products(
         products = products.filter(service=service)
 
     products = await products.\
-        distinct().\
         all().\
+        distinct().\
         limit(limit).\
         offset(offset).\
         order_by("-updated_at")
@@ -306,6 +307,7 @@ async def buy_rent_product_item(
     buyer: int = None,
     rent_time_start: str = None,
     rent_time_stop: str = None,
+    salesman: int = None,
 ):
     product_item = await ProductItems.filter(id=item_pk, sold=False).first()
     if not product_item:
@@ -313,9 +315,11 @@ async def buy_rent_product_item(
     product_item.sold = True
     if buyer:
         product_item.buyer = buyer
+    if salesman:
+        product_item.salesman = salesman
     if rent_time_start and rent_time_stop:
-        product_item.rent_time_start = rent_time_start
-        product_item.rent_time_stop = rent_time_stop
+        product_item.rent_time_start = dateutil.parser.parse(rent_time_start)
+        product_item.rent_time_stop = dateutil.parser.parse(rent_time_stop)
 
     await product_item.save()
     return True

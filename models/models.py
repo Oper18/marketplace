@@ -102,6 +102,7 @@ class ProductItems(Model, ExtendedModel):
     serial_number = fields.CharField(max_length=256, null=True)
     sold = fields.BooleanField(default=False)
     buyer = fields.IntField(null=True)
+    salesman = fields.IntField(null=True)
     rent_time_start = fields.DatetimeField(null=True)
     rent_time_stop = fields.DatetimeField(null=True)
     created_at = fields.DatetimeField(auto_now_add=True)

@@ -154,8 +154,9 @@ message ProductItemResponse {
   string serial_number = 4;
   bool sold = 5;
   int64 buyer = 6;
-  string rent_time_start = 7;
-  string rent_time_stop = 8;
+  int64 salesman = 7;
+  string rent_time_start = 8;
+  string rent_time_stop = 9;
 }
 
 message ProductItemsListResponse {
@@ -195,6 +196,7 @@ message ProductItemBuyRequest {
   int64 buyer = 2;
   string rent_time_start = 3;
   string rent_time_stop = 4;
+  int64 salesman = 5;
 }
 
 message ProductItemBuyResponse {
