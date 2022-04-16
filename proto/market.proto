@@ -145,6 +145,8 @@ message ProductItemsRequest {
   string size = 4;
   string serial_number = 5;
   bool sold = 6;
+  string rent_date_start = 7;
+  string rent_date_stop = 8;
 }
 
 message ProductItemResponse {

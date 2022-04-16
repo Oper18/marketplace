@@ -141,15 +141,39 @@ async def get_product_items(
     size: str = None,
     serial_number: str = None,
     sold: bool = False,
+    rent_date_start: str = None,
+    rent_date_stop: str = None,
 ):
+    print(rent_date_start, rent_date_stop)
     count = await ProductItems.filter(product__pk=product, sold=False).all().count()
     items = ProductItems.filter(product__pk=product, sold=sold)
     if size:
         items = items.filter(size=size)
     if serial_number:
-        items = items.filter(serial_number_icontains=serial_number)
+        items = items.filter(serial_number__icontains=serial_number)
+    if rent_date_start and not rent_date_stop:
+        items = items.filter(
+            rent_time_start__gte=rent_date_start,
+            rent_time_start__lte=rent_date_stop,
+        )
+    elif rent_date_stop and not rent_date_start:
+        items = items.filter(
+            rent_time_stop__gte=rent_date_start,
+            rent_time_stop__lte=rent_date_stop,
+        )
+    elif rent_date_start and rent_date_stop:
+        items = items.filter(
+            Q(
+                Q(rent_time_start__gte=rent_date_start) &
+                Q(rent_time_start__lte=rent_date_stop)
+            ) |
+            Q(
+                Q(rent_time_stop__gte=rent_date_start) &
+                Q(rent_time_stop__lte=rent_date_stop)
+            )
+        )
 
-    items = await items.all().limit(limit).offset(offset).order_by('size')
+    items = await items.all().limit(limit).offset(offset).order_by('size', 'rent_time_start')
 
     return {
         "count": count,

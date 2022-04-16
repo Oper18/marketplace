@@ -178,6 +178,8 @@ class GetProductItemsServer(market_pb2_grpc.GetProductsItemsServicer):
             size=request.size,
             serial_number=request.serial_number,
             sold=request.sold,
+            rent_date_start=request.rent_date_start,
+            rent_date_stop=request.rent_date_stop,
         )
         return market_pb2.ProductItemsListResponse(
             count=res["count"],
