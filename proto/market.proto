@@ -220,3 +220,15 @@ message ProductItemRemoveResponse {
 service RemoveProductItem {
   rpc RemoveProdItem(ProductItemRemoveRequest) returns (ProductItemRemoveResponse) {}
 }
+
+message ProductRemoveRequest {
+  int64 product_pk = 1;
+}
+
+message ProductRemoveResponse {
+  bool message = 1;
+}
+
+service RemoveProduct {
+  rpc RemoveProduct(ProductRemoveRequest) returns (ProductRemoveResponse) {}
+}

@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cmarket.proto\x12\tmessenger\"2\n\x11\x43\x61tegoriesRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\"X\n\x14\x43\x61tegoryItemResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\ncreated_at\x18\x03 \x01(\t\x12\x12\n\nupdated_at\x18\x04 \x01(\t\"S\n\x12\x43\x61tegoriesResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.messenger.CategoryItemResponse\"1\n\x15\x43\x61tegoryManageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\"-\n\x0c\x42randRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\"c\n\x11\x42randItemResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\t\x12\x12\n\ncreated_at\x18\x04 \x01(\t\x12\x12\n\nupdated_at\x18\x05 \x01(\t\"K\n\rBrandResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.messenger.BrandItemResponse\"I\n\x12\x42randManageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\x0c\x12\x0b\n\x03\x65xt\x18\x04 \x01(\t\"\xc0\x01\n\x0eProductRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x12\n\nbrand_name\x18\x03 \x01(\x03\x12\x10\n\x08\x63\x61tegory\x18\x04 \x01(\x03\x12\x0b\n\x03sex\x18\x05 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x06 \x01(\x03\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x16\n\x0e\x61rticle_number\x18\x08 \x01(\t\x12\n\n\x02id\x18\t \x01(\x03\x12\x0c\n\x04rent\x18\n \x01(\x03\x12\x0f\n\x07service\x18\x0b \x01(\x03\"\xf1\x02\n\x0fProductResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x30\n\nbrand_name\x18\x02 \x01(\x0b\x32\x1c.messenger.BrandItemResponse\x12\x31\n\x08\x63\x61tegory\x18\x03 \x03(\x0b\x32\x1f.messenger.CategoryItemResponse\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\r\n\x05\x63olor\x18\x06 \x01(\t\x12\x0b\n\x03sex\x18\x07 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x08 \x01(\x03\x12\x16\n\x0e\x61rticle_number\x18\t \x01(\t\x12\r\n\x05price\x18\n \x01(\x02\x12\x10\n\x08\x63urrency\x18\x0b \x01(\t\x12\x10\n\x08\x64iscount\x18\x0c \x01(\x02\x12\x0c\n\x04rent\x18\r \x01(\x08\x12\x0f\n\x07service\x18\x0e \x01(\x08\x12\x0f\n\x07gallery\x18\x0f \x03(\t\x12\x12\n\ncreated_at\x18\x10 \x01(\t\x12\x12\n\nupdated_at\x18\x11 \x01(\t\"O\n\x13ProductListResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.messenger.ProductResponse\"3\n\x15ProductGalleryRequest\x12\x0b\n\x03\x65xt\x18\x01 \x01(\t\x12\r\n\x05\x62ytes\x18\x02 \x01(\x0c\"\xb9\x02\n\x14ProductManageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x12\n\nbrand_name\x18\x04 \x01(\x03\x12\x10\n\x08\x63\x61tegory\x18\x05 \x03(\x03\x12\r\n\x05\x63olor\x18\x06 \x01(\t\x12\x0b\n\x03sex\x18\x07 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x08 \x01(\x03\x12\x16\n\x0e\x61rticle_number\x18\t \x01(\t\x12\r\n\x05price\x18\n \x01(\x02\x12\x10\n\x08\x63urrency\x18\x0b \x01(\t\x12\x10\n\x08\x64iscount\x18\x0c \x01(\x02\x12\x0c\n\x04rent\x18\r \x01(\x08\x12\x0f\n\x07service\x18\x0e \x01(\x08\x12-\n\x03pgr\x18\x0f \x03(\x0b\x32 .messenger.ProductGalleryRequest\x12\n\n\x02\x65g\x18\x10 \x03(\t\"\xa9\x01\n\x13ProductItemsRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x0f\n\x07product\x18\x03 \x01(\x03\x12\x0c\n\x04size\x18\x04 \x01(\t\x12\x15\n\rserial_number\x18\x05 \x01(\t\x12\x0c\n\x04sold\x18\x06 \x01(\x08\x12\x17\n\x0frent_date_start\x18\x07 \x01(\t\x12\x16\n\x0erent_date_stop\x18\x08 \x01(\t\"\xd3\x01\n\x13ProductItemResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12+\n\x07product\x18\x02 \x01(\x0b\x32\x1a.messenger.ProductResponse\x12\x0c\n\x04size\x18\x03 \x01(\t\x12\x15\n\rserial_number\x18\x04 \x01(\t\x12\x0c\n\x04sold\x18\x05 \x01(\x08\x12\r\n\x05\x62uyer\x18\x06 \x01(\x03\x12\x10\n\x08salesman\x18\x07 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x08 \x01(\t\x12\x16\n\x0erent_time_stop\x18\t \x01(\t\"X\n\x18ProductItemsListResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12-\n\x05items\x18\x02 \x03(\x0b\x32\x1e.messenger.ProductItemResponse\"\x99\x01\n\x18ProductItemCreateRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04size\x18\x02 \x01(\t\x12\x15\n\rserial_number\x18\x03 \x01(\t\x12\x0c\n\x04sold\x18\x04 \x01(\x08\x12\r\n\x05\x62uyer\x18\x05 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x06 \x01(\t\x12\x16\n\x0erent_time_stop\x18\x07 \x01(\t\"d\n\x1dProductItemsListCreateRequest\x12\x0f\n\x07product\x18\x01 \x01(\x03\x12\x32\n\x05items\x18\x02 \x03(\x0b\x32#.messenger.ProductItemCreateRequest\"I\n\x1aProductItemsCreateResponse\x12+\n\x03\x61rr\x18\x01 \x03(\x0b\x32\x1e.messenger.ProductItemResponse\"z\n\x15ProductItemBuyRequest\x12\x0f\n\x07item_pk\x18\x01 \x01(\x03\x12\r\n\x05\x62uyer\x18\x02 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x03 \x01(\t\x12\x16\n\x0erent_time_stop\x18\x04 \x01(\t\x12\x10\n\x08salesman\x18\x05 \x01(\x03\")\n\x16ProductItemBuyResponse\x12\x0f\n\x07message\x18\x01 \x01(\x08\"+\n\x18ProductItemRemoveRequest\x12\x0f\n\x07item_pk\x18\x01 \x01(\x03\",\n\x19ProductItemRemoveResponse\x12\x0f\n\x07message\x18\x01 \x01(\x08\x32Y\n\rGetCategories\x12H\n\x07GetCats\x12\x1c.messenger.CategoriesRequest\x1a\x1d.messenger.CategoriesResponse\"\x00\x32\x63\n\x0eManageCategory\x12Q\n\nManageCats\x12 .messenger.CategoryManageRequest\x1a\x1f.messenger.CategoryItemResponse\"\x00\x32R\n\x0eGetBrandsNames\x12@\n\tGetBrands\x12\x17.messenger.BrandRequest\x1a\x18.messenger.BrandResponse\"\x00\x32\x62\n\x11ManageBrandsNames\x12M\n\x0cManageBrands\x12\x1d.messenger.BrandManageRequest\x1a\x1c.messenger.BrandItemResponse\"\x00\x32V\n\x0bGetProducts\x12G\n\x08GetProds\x12\x19.messenger.ProductRequest\x1a\x1e.messenger.ProductListResponse\"\x00\x32^\n\x0eManageProducts\x12L\n\x0bManageProds\x12\x1f.messenger.ProductManageRequest\x1a\x1a.messenger.ProductResponse\"\x00\x32i\n\x10GetProductsItems\x12U\n\x0cGetProdItems\x12\x1e.messenger.ProductItemsRequest\x1a#.messenger.ProductItemsListResponse\"\x00\x32{\n\x13\x43reateProductsItems\x12\x64\n\x0f\x43reateProdItems\x12(.messenger.ProductItemsListCreateRequest\x1a%.messenger.ProductItemsCreateResponse\"\x00\x32\x66\n\x0e\x42uyProductItem\x12T\n\x0b\x42uyProdItem\x12 .messenger.ProductItemBuyRequest\x1a!.messenger.ProductItemBuyResponse\"\x00\x32r\n\x11RemoveProductItem\x12]\n\x0eRemoveProdItem\x12#.messenger.ProductItemRemoveRequest\x1a$.messenger.ProductItemRemoveResponse\"\x00\x42\x10Z\x0e./proto;marketb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cmarket.proto\x12\tmessenger\"2\n\x11\x43\x61tegoriesRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\"X\n\x14\x43\x61tegoryItemResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\ncreated_at\x18\x03 \x01(\t\x12\x12\n\nupdated_at\x18\x04 \x01(\t\"S\n\x12\x43\x61tegoriesResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.messenger.CategoryItemResponse\"1\n\x15\x43\x61tegoryManageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\"-\n\x0c\x42randRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\"c\n\x11\x42randItemResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\t\x12\x12\n\ncreated_at\x18\x04 \x01(\t\x12\x12\n\nupdated_at\x18\x05 \x01(\t\"K\n\rBrandResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.messenger.BrandItemResponse\"I\n\x12\x42randManageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\x0c\x12\x0b\n\x03\x65xt\x18\x04 \x01(\t\"\xc0\x01\n\x0eProductRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x12\n\nbrand_name\x18\x03 \x01(\x03\x12\x10\n\x08\x63\x61tegory\x18\x04 \x01(\x03\x12\x0b\n\x03sex\x18\x05 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x06 \x01(\x03\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x16\n\x0e\x61rticle_number\x18\x08 \x01(\t\x12\n\n\x02id\x18\t \x01(\x03\x12\x0c\n\x04rent\x18\n \x01(\x03\x12\x0f\n\x07service\x18\x0b \x01(\x03\"\xf1\x02\n\x0fProductResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x30\n\nbrand_name\x18\x02 \x01(\x0b\x32\x1c.messenger.BrandItemResponse\x12\x31\n\x08\x63\x61tegory\x18\x03 \x03(\x0b\x32\x1f.messenger.CategoryItemResponse\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\r\n\x05\x63olor\x18\x06 \x01(\t\x12\x0b\n\x03sex\x18\x07 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x08 \x01(\x03\x12\x16\n\x0e\x61rticle_number\x18\t \x01(\t\x12\r\n\x05price\x18\n \x01(\x02\x12\x10\n\x08\x63urrency\x18\x0b \x01(\t\x12\x10\n\x08\x64iscount\x18\x0c \x01(\x02\x12\x0c\n\x04rent\x18\r \x01(\x08\x12\x0f\n\x07service\x18\x0e \x01(\x08\x12\x0f\n\x07gallery\x18\x0f \x03(\t\x12\x12\n\ncreated_at\x18\x10 \x01(\t\x12\x12\n\nupdated_at\x18\x11 \x01(\t\"O\n\x13ProductListResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.messenger.ProductResponse\"3\n\x15ProductGalleryRequest\x12\x0b\n\x03\x65xt\x18\x01 \x01(\t\x12\r\n\x05\x62ytes\x18\x02 \x01(\x0c\"\xb9\x02\n\x14ProductManageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x12\n\nbrand_name\x18\x04 \x01(\x03\x12\x10\n\x08\x63\x61tegory\x18\x05 \x03(\x03\x12\r\n\x05\x63olor\x18\x06 \x01(\t\x12\x0b\n\x03sex\x18\x07 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x08 \x01(\x03\x12\x16\n\x0e\x61rticle_number\x18\t \x01(\t\x12\r\n\x05price\x18\n \x01(\x02\x12\x10\n\x08\x63urrency\x18\x0b \x01(\t\x12\x10\n\x08\x64iscount\x18\x0c \x01(\x02\x12\x0c\n\x04rent\x18\r \x01(\x08\x12\x0f\n\x07service\x18\x0e \x01(\x08\x12-\n\x03pgr\x18\x0f \x03(\x0b\x32 .messenger.ProductGalleryRequest\x12\n\n\x02\x65g\x18\x10 \x03(\t\"\xa9\x01\n\x13ProductItemsRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x0f\n\x07product\x18\x03 \x01(\x03\x12\x0c\n\x04size\x18\x04 \x01(\t\x12\x15\n\rserial_number\x18\x05 \x01(\t\x12\x0c\n\x04sold\x18\x06 \x01(\x08\x12\x17\n\x0frent_date_start\x18\x07 \x01(\t\x12\x16\n\x0erent_date_stop\x18\x08 \x01(\t\"\xd3\x01\n\x13ProductItemResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12+\n\x07product\x18\x02 \x01(\x0b\x32\x1a.messenger.ProductResponse\x12\x0c\n\x04size\x18\x03 \x01(\t\x12\x15\n\rserial_number\x18\x04 \x01(\t\x12\x0c\n\x04sold\x18\x05 \x01(\x08\x12\r\n\x05\x62uyer\x18\x06 \x01(\x03\x12\x10\n\x08salesman\x18\x07 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x08 \x01(\t\x12\x16\n\x0erent_time_stop\x18\t \x01(\t\"X\n\x18ProductItemsListResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12-\n\x05items\x18\x02 \x03(\x0b\x32\x1e.messenger.ProductItemResponse\"\x99\x01\n\x18ProductItemCreateRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04size\x18\x02 \x01(\t\x12\x15\n\rserial_number\x18\x03 \x01(\t\x12\x0c\n\x04sold\x18\x04 \x01(\x08\x12\r\n\x05\x62uyer\x18\x05 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x06 \x01(\t\x12\x16\n\x0erent_time_stop\x18\x07 \x01(\t\"d\n\x1dProductItemsListCreateRequest\x12\x0f\n\x07product\x18\x01 \x01(\x03\x12\x32\n\x05items\x18\x02 \x03(\x0b\x32#.messenger.ProductItemCreateRequest\"I\n\x1aProductItemsCreateResponse\x12+\n\x03\x61rr\x18\x01 \x03(\x0b\x32\x1e.messenger.ProductItemResponse\"z\n\x15ProductItemBuyRequest\x12\x0f\n\x07item_pk\x18\x01 \x01(\x03\x12\r\n\x05\x62uyer\x18\x02 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x03 \x01(\t\x12\x16\n\x0erent_time_stop\x18\x04 \x01(\t\x12\x10\n\x08salesman\x18\x05 \x01(\x03\")\n\x16ProductItemBuyResponse\x12\x0f\n\x07message\x18\x01 \x01(\x08\"+\n\x18ProductItemRemoveRequest\x12\x0f\n\x07item_pk\x18\x01 \x01(\x03\",\n\x19ProductItemRemoveResponse\x12\x0f\n\x07message\x18\x01 \x01(\x08\"*\n\x14ProductRemoveRequest\x12\x12\n\nproduct_pk\x18\x01 \x01(\x03\"(\n\x15ProductRemoveResponse\x12\x0f\n\x07message\x18\x01 \x01(\x08\x32Y\n\rGetCategories\x12H\n\x07GetCats\x12\x1c.messenger.CategoriesRequest\x1a\x1d.messenger.CategoriesResponse\"\x00\x32\x63\n\x0eManageCategory\x12Q\n\nManageCats\x12 .messenger.CategoryManageRequest\x1a\x1f.messenger.CategoryItemResponse\"\x00\x32R\n\x0eGetBrandsNames\x12@\n\tGetBrands\x12\x17.messenger.BrandRequest\x1a\x18.messenger.BrandResponse\"\x00\x32\x62\n\x11ManageBrandsNames\x12M\n\x0cManageBrands\x12\x1d.messenger.BrandManageRequest\x1a\x1c.messenger.BrandItemResponse\"\x00\x32V\n\x0bGetProducts\x12G\n\x08GetProds\x12\x19.messenger.ProductRequest\x1a\x1e.messenger.ProductListResponse\"\x00\x32^\n\x0eManageProducts\x12L\n\x0bManageProds\x12\x1f.messenger.ProductManageRequest\x1a\x1a.messenger.ProductResponse\"\x00\x32i\n\x10GetProductsItems\x12U\n\x0cGetProdItems\x12\x1e.messenger.ProductItemsRequest\x1a#.messenger.ProductItemsListResponse\"\x00\x32{\n\x13\x43reateProductsItems\x12\x64\n\x0f\x43reateProdItems\x12(.messenger.ProductItemsListCreateRequest\x1a%.messenger.ProductItemsCreateResponse\"\x00\x32\x66\n\x0e\x42uyProductItem\x12T\n\x0b\x42uyProdItem\x12 .messenger.ProductItemBuyRequest\x1a!.messenger.ProductItemBuyResponse\"\x00\x32r\n\x11RemoveProductItem\x12]\n\x0eRemoveProdItem\x12#.messenger.ProductItemRemoveRequest\x1a$.messenger.ProductItemRemoveResponse\"\x00\x32\x65\n\rRemoveProduct\x12T\n\rRemoveProduct\x12\x1f.messenger.ProductRemoveRequest\x1a .messenger.ProductRemoveResponse\"\x00\x42\x10Z\x0e./proto;marketb\x06proto3')
 
 
 
@@ -41,6 +41,8 @@ _PRODUCTITEMBUYREQUEST = DESCRIPTOR.message_types_by_name['ProductItemBuyRequest
 _PRODUCTITEMBUYRESPONSE = DESCRIPTOR.message_types_by_name['ProductItemBuyResponse']
 _PRODUCTITEMREMOVEREQUEST = DESCRIPTOR.message_types_by_name['ProductItemRemoveRequest']
 _PRODUCTITEMREMOVERESPONSE = DESCRIPTOR.message_types_by_name['ProductItemRemoveResponse']
+_PRODUCTREMOVEREQUEST = DESCRIPTOR.message_types_by_name['ProductRemoveRequest']
+_PRODUCTREMOVERESPONSE = DESCRIPTOR.message_types_by_name['ProductRemoveResponse']
 CategoriesRequest = _reflection.GeneratedProtocolMessageType('CategoriesRequest', (_message.Message,), {
   'DESCRIPTOR' : _CATEGORIESREQUEST,
   '__module__' : 'market_pb2'
@@ -202,6 +204,20 @@ ProductItemRemoveResponse = _reflection.GeneratedProtocolMessageType('ProductIte
   })
 _sym_db.RegisterMessage(ProductItemRemoveResponse)
 
+ProductRemoveRequest = _reflection.GeneratedProtocolMessageType('ProductRemoveRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PRODUCTREMOVEREQUEST,
+  '__module__' : 'market_pb2'
+  # @@protoc_insertion_point(class_scope:messenger.ProductRemoveRequest)
+  })
+_sym_db.RegisterMessage(ProductRemoveRequest)
+
+ProductRemoveResponse = _reflection.GeneratedProtocolMessageType('ProductRemoveResponse', (_message.Message,), {
+  'DESCRIPTOR' : _PRODUCTREMOVERESPONSE,
+  '__module__' : 'market_pb2'
+  # @@protoc_insertion_point(class_scope:messenger.ProductRemoveResponse)
+  })
+_sym_db.RegisterMessage(ProductRemoveResponse)
+
 _GETCATEGORIES = DESCRIPTOR.services_by_name['GetCategories']
 _MANAGECATEGORY = DESCRIPTOR.services_by_name['ManageCategory']
 _GETBRANDSNAMES = DESCRIPTOR.services_by_name['GetBrandsNames']
@@ -212,6 +228,7 @@ _GETPRODUCTSITEMS = DESCRIPTOR.services_by_name['GetProductsItems']
 _CREATEPRODUCTSITEMS = DESCRIPTOR.services_by_name['CreateProductsItems']
 _BUYPRODUCTITEM = DESCRIPTOR.services_by_name['BuyProductItem']
 _REMOVEPRODUCTITEM = DESCRIPTOR.services_by_name['RemoveProductItem']
+_REMOVEPRODUCT = DESCRIPTOR.services_by_name['RemoveProduct']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
@@ -262,24 +279,30 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PRODUCTITEMREMOVEREQUEST._serialized_end=2641
   _PRODUCTITEMREMOVERESPONSE._serialized_start=2643
   _PRODUCTITEMREMOVERESPONSE._serialized_end=2687
-  _GETCATEGORIES._serialized_start=2689
-  _GETCATEGORIES._serialized_end=2778
-  _MANAGECATEGORY._serialized_start=2780
-  _MANAGECATEGORY._serialized_end=2879
-  _GETBRANDSNAMES._serialized_start=2881
-  _GETBRANDSNAMES._serialized_end=2963
-  _MANAGEBRANDSNAMES._serialized_start=2965
-  _MANAGEBRANDSNAMES._serialized_end=3063
-  _GETPRODUCTS._serialized_start=3065
-  _GETPRODUCTS._serialized_end=3151
-  _MANAGEPRODUCTS._serialized_start=3153
-  _MANAGEPRODUCTS._serialized_end=3247
-  _GETPRODUCTSITEMS._serialized_start=3249
-  _GETPRODUCTSITEMS._serialized_end=3354
-  _CREATEPRODUCTSITEMS._serialized_start=3356
-  _CREATEPRODUCTSITEMS._serialized_end=3479
-  _BUYPRODUCTITEM._serialized_start=3481
-  _BUYPRODUCTITEM._serialized_end=3583
-  _REMOVEPRODUCTITEM._serialized_start=3585
-  _REMOVEPRODUCTITEM._serialized_end=3699
+  _PRODUCTREMOVEREQUEST._serialized_start=2689
+  _PRODUCTREMOVEREQUEST._serialized_end=2731
+  _PRODUCTREMOVERESPONSE._serialized_start=2733
+  _PRODUCTREMOVERESPONSE._serialized_end=2773
+  _GETCATEGORIES._serialized_start=2775
+  _GETCATEGORIES._serialized_end=2864
+  _MANAGECATEGORY._serialized_start=2866
+  _MANAGECATEGORY._serialized_end=2965
+  _GETBRANDSNAMES._serialized_start=2967
+  _GETBRANDSNAMES._serialized_end=3049
+  _MANAGEBRANDSNAMES._serialized_start=3051
+  _MANAGEBRANDSNAMES._serialized_end=3149
+  _GETPRODUCTS._serialized_start=3151
+  _GETPRODUCTS._serialized_end=3237
+  _MANAGEPRODUCTS._serialized_start=3239
+  _MANAGEPRODUCTS._serialized_end=3333
+  _GETPRODUCTSITEMS._serialized_start=3335
+  _GETPRODUCTSITEMS._serialized_end=3440
+  _CREATEPRODUCTSITEMS._serialized_start=3442
+  _CREATEPRODUCTSITEMS._serialized_end=3565
+  _BUYPRODUCTITEM._serialized_start=3567
+  _BUYPRODUCTITEM._serialized_end=3669
+  _REMOVEPRODUCTITEM._serialized_start=3671
+  _REMOVEPRODUCTITEM._serialized_end=3785
+  _REMOVEPRODUCT._serialized_start=3787
+  _REMOVEPRODUCT._serialized_end=3888
 # @@protoc_insertion_point(module_scope)

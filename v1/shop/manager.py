@@ -351,3 +351,7 @@ async def buy_rent_product_item(
 
 async def delete_product_item(item_pk: int):
     await ProductItems.get(id=item_pk).delete()
+
+
+async def delete_product(product_pk: int):
+    await Product.get(id=product_pk).delete()

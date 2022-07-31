@@ -21,6 +21,7 @@ from v1.shop.manager import (
     create_product_items,
     buy_rent_product_item,
     delete_product_item,
+    delete_product,
 )
 
 from settings import DATABASE
@@ -237,6 +238,16 @@ class RemoveProductItemServer(market_pb2_grpc.RemoveProductItemServicer):
         return market_pb2.ProductItemRemoveResponse(message=True)
 
 
+class RemoveProductServer(market_pb2_grpc.RemoveProductServicer):
+    async def RemoveProduct(
+            self,
+            request: market_pb2.ProductRemoveRequest,
+            context: grpc.aio.ServicerContext
+    ) -> market_pb2.ProductRemoveResponse:
+        res = await delete_product(product_pk=request.product_pk)
+        return market_pb2.ProductRemoveResponse(message=True)
+
+
 async def serve() -> None:
     await Tortoise.init(
         db_url="postgres://{}:{}@{}:5432/{}".format(
@@ -278,6 +289,9 @@ async def serve() -> None:
     )
     market_pb2_grpc.add_RemoveProductItemServicer_to_server(
         RemoveProductItemServer(), server
+    )
+    market_pb2_grpc.add_RemoveProductServicer_to_server(
+        RemoveProductServer(), server
     )
 
     listen_addr = '[::]:50051'
