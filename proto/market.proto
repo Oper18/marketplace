@@ -232,3 +232,30 @@ message ProductRemoveResponse {
 service RemoveProduct {
   rpc RemoveProduct(ProductRemoveRequest) returns (ProductRemoveResponse) {}
 }
+
+message ProductItemsStatRequest {
+  string date_start = 1;
+  string date_stop = 2;
+}
+
+message ProductItemStatResponse {
+  int64 id = 1;
+  int64 product_id = 2;
+  string product_name = 3;
+  float price = 4;
+  string serial_number = 5;
+  string size = 6;
+  int64 buyer = 7;
+  int64 salesman = 8;
+  int64 lost_items = 9;
+  string rent_time_space = 10;
+  string sold_date = 11;
+}
+
+message ProductItemsStatResponse {
+  repeated ProductItemStatResponse statistic = 1;
+}
+
+service ProductItemsStat {
+  rpc ProductItemsStat(ProductItemsStatRequest) returns (ProductItemsStatResponse) {}
+}

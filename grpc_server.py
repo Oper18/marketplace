@@ -24,6 +24,8 @@ from v1.shop.manager import (
     delete_product,
 )
 
+from v1.util import export_stat_xls
+
 from settings import DATABASE
 
 
@@ -248,6 +250,21 @@ class RemoveProductServer(market_pb2_grpc.RemoveProductServicer):
         return market_pb2.ProductRemoveResponse(message=True)
 
 
+class ProductItemsStatServer(
+        market_pb2_grpc.RemoveProductServicer
+):
+    async def ProductItemsStat(
+            self,
+            request: market_pb2.ProductItemsStatRequest,
+            context: grpc.aio.ServicerContext
+    ) -> market_pb2.ProductItemsStatResponse:
+        stat = await export_stat_xls(
+            date_start=request.date_start,
+            date_stop=request.date_stop,
+        )
+        return market_pb2.ProductItemsStatResponse(statistic=stat)
+
+
 async def serve() -> None:
     await Tortoise.init(
         db_url="postgres://{}:{}@{}:5432/{}".format(
@@ -292,6 +309,9 @@ async def serve() -> None:
     )
     market_pb2_grpc.add_RemoveProductServicer_to_server(
         RemoveProductServer(), server
+    )
+    market_pb2_grpc.add_ProductItemsStatServicer_to_server(
+        ProductItemsStatServer(), server
     )
 
     listen_addr = '[::]:50051'
