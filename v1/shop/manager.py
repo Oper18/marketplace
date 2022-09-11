@@ -87,11 +87,6 @@ async def get_products(
     rent: bool = None,
     service: bool = None,
 ):
-    if service is None:
-        count = await Product.all().count()
-    else:
-        count = await Product.filter(service=service).all().count()
-
     products = Product
 
     if brand_name:
@@ -110,6 +105,8 @@ async def get_products(
         products = products.filter(rent=rent)
     if service is not None:
         products = products.filter(service=service)
+
+    count = await products.all().count()
 
     products = await products.\
         all().\

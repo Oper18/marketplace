@@ -69,7 +69,7 @@ class Product(Model, ExtendedModel):
     color = fields.CharField(max_length=64, null=True)
     sex = fields.IntEnumField(enum_type=Sex)
     age = fields.IntEnumField(enum_type=Age)
-    article_number = fields.CharField(max_length=256, null=True)
+    article_number = fields.CharField(max_length=256, null=True, unique=True)
     price = fields.DecimalField(max_digits=10, decimal_places=2, null=True)
     currency = fields.CharField(max_length=16, null=True)
     discount = fields.FloatField(default=0.0)
