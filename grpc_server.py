@@ -164,6 +164,7 @@ class ManageProductsServer(market_pb2_grpc.GetProductsServicer):
                 for g in request.pgr
             ],
             exist_gallery=request.eg,
+            size=request.size,
         )
         return market_pb2.ProductResponse(**res)
 
@@ -178,8 +179,6 @@ class GetProductItemsServer(market_pb2_grpc.GetProductsItemsServicer):
             product=request.product,
             limit=request.limit,
             offset=request.offset,
-            size=request.size,
-            serial_number=request.serial_number,
             sold=request.sold,
             rent_date_start=request.rent_date_start,
             rent_date_stop=request.rent_date_stop,
@@ -201,8 +200,6 @@ class CreateProductItemsServer(market_pb2_grpc.CreateProductsItemsServicer):
             items=[
                 {
                     "id": p.id if p.id else None,
-                    "size": p.size,
-                    "serial_number": p.serial_number,
                     "sold": p.sold,
                     "buyer": p.buyer,
                     "rent_time_start": p.rent_time_start if p.rent_time_start else None,
@@ -222,6 +219,8 @@ class BuyProductItemServer(market_pb2_grpc.BuyProductItemServicer):
     ) -> market_pb2.ProductItemBuyResponse:
         res = await buy_rent_product_item(
             item_pk=request.item_pk,
+            product_id=request.product_id,
+            article_number=request.article_number,
             buyer=request.buyer,
             rent_time_start=request.rent_time_start,
             rent_time_stop=request.rent_time_stop,

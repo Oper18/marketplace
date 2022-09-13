@@ -2,7 +2,7 @@ import os
 import uuid
 import dateutil.parser
 
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 from aiofile import async_open
 
@@ -135,19 +135,12 @@ async def get_product_items(
     product: int,
     limit: int = 10,
     offset: int = 0,
-    size: str = None,
-    serial_number: str = None,
     sold: bool = False,
     rent_date_start: str = None,
     rent_date_stop: str = None,
 ):
-    print(rent_date_start, rent_date_stop)
     count = await ProductItems.filter(product__pk=product, sold=False).all().count()
     items = ProductItems.filter(product__pk=product, sold=sold)
-    if size:
-        items = items.filter(size=size)
-    if serial_number:
-        items = items.filter(serial_number__icontains=serial_number)
     if rent_date_start and not rent_date_stop:
         items = items.filter(
             rent_time_start__gte=rent_date_start,
@@ -170,7 +163,7 @@ async def get_product_items(
             )
         )
 
-    items = await items.all().limit(limit).offset(offset).order_by('size', 'rent_time_start')
+    items = await items.all().limit(limit).offset(offset).order_by('rent_time_start')
 
     return {
         "count": count,
@@ -240,6 +233,7 @@ async def manage_product(
     service: bool = False,
     gallery: List[dict] = [],
     exist_gallery: List[int] = [],
+    size: Optional[str] = None,
 ):
     if not id and not brand_name:
         return None
@@ -271,6 +265,8 @@ async def manage_product(
         update_fields["rent"] = rent
     if service is not None:
         update_fields["service"] = service
+    if size is not None:
+        update_fields["size"] = size
 
     if id:
         await Product.get(id=id).update(**update_fields)
@@ -324,13 +320,24 @@ async def create_product_items(
 
 
 async def buy_rent_product_item(
-    item_pk: int,
+    item_pk: Optional[int] = None,
+    product_id: Optional[int] = None,
+    article_number: Optional[str] = None,
     buyer: int = None,
     rent_time_start: str = None,
     rent_time_stop: str = None,
     salesman: int = None,
 ):
-    product_item = await ProductItems.filter(id=item_pk, sold=False).first()
+    if not product_id and not item_pk and not article_number:
+        return False
+    
+    if item_pk:
+        product_item = await ProductItems.filter(id=item_pk, sold=False).first()
+    elif product_id:
+        product_item = await ProductItems.filter(product__id=product_id, sold=False).first()
+    elif article_number:
+        product_item = await ProductItems.filter(product__article_number=article_number, sold=False).first()
+
     if not product_item:
         return False
     product_item.sold = True

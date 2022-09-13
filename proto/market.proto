@@ -79,6 +79,7 @@ message ProductRequest {
   int64 id = 9;
   int64 rent = 10;
   int64 service = 11;
+  string size = 12;
 }
 
 message ProductResponse {
@@ -99,6 +100,7 @@ message ProductResponse {
   repeated string gallery = 15;
   string created_at = 16;
   string updated_at = 17;
+  string size = 18;
 }
 
 message ProductListResponse {
@@ -132,6 +134,7 @@ message ProductManageRequest {
   bool service = 14;
   repeated ProductGalleryRequest pgr = 15;
   repeated string eg = 16;
+  string size = 17;
 }
 
 service ManageProducts {
@@ -142,23 +145,19 @@ message ProductItemsRequest {
   int64 limit = 1;
   int64 offset = 2;
   int64 product = 3;
-  string size = 4;
-  string serial_number = 5;
-  bool sold = 6;
-  string rent_date_start = 7;
-  string rent_date_stop = 8;
+  bool sold = 4;
+  string rent_date_start = 5;
+  string rent_date_stop = 6;
 }
 
 message ProductItemResponse {
   int64 id = 1;
   ProductResponse product = 2;
-  string size = 3;
-  string serial_number = 4;
-  bool sold = 5;
-  int64 buyer = 6;
-  int64 salesman = 7;
-  string rent_time_start = 8;
-  string rent_time_stop = 9;
+  bool sold = 3;
+  int64 buyer = 4;
+  int64 salesman = 5;
+  string rent_time_start = 6;
+  string rent_time_stop = 7;
 }
 
 message ProductItemsListResponse {
@@ -172,12 +171,10 @@ service GetProductsItems {
 
 message ProductItemCreateRequest {
   int64 id = 1;
-  string size = 2;
-  string serial_number = 3;
-  bool sold = 4;
-  int64 buyer = 5;
-  string rent_time_start = 6;
-  string rent_time_stop = 7;
+  bool sold = 2;
+  int64 buyer = 3;
+  string rent_time_start = 4;
+  string rent_time_stop = 5;
 }
 
 message ProductItemsListCreateRequest {
@@ -199,6 +196,8 @@ message ProductItemBuyRequest {
   string rent_time_start = 3;
   string rent_time_stop = 4;
   int64 salesman = 5;
+  int64 product_id = 6;
+  string article_number = 7;
 }
 
 message ProductItemBuyResponse {
@@ -243,7 +242,7 @@ message ProductItemStatResponse {
   int64 product_id = 2;
   string product_name = 3;
   float price = 4;
-  string serial_number = 5;
+  string article_number = 5;
   string size = 6;
   int64 buyer = 7;
   int64 salesman = 8;

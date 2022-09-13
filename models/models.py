@@ -70,6 +70,7 @@ class Product(Model, ExtendedModel):
     sex = fields.IntEnumField(enum_type=Sex)
     age = fields.IntEnumField(enum_type=Age)
     article_number = fields.CharField(max_length=256, null=True, unique=True)
+    size = fields.CharField(max_length=64, null=True)
     price = fields.DecimalField(max_digits=10, decimal_places=2, null=True)
     currency = fields.CharField(max_length=16, null=True)
     discount = fields.FloatField(default=0.0)
@@ -98,8 +99,6 @@ class ProductItems(Model, ExtendedModel):
 
     id = fields.IntField(pk=True)
     product = fields.ForeignKeyField('models.Product', related_name='items')
-    size = fields.CharField(max_length=64, null=True)
-    serial_number = fields.CharField(max_length=256, null=True)
     sold = fields.BooleanField(default=False)
     buyer = fields.IntField(null=True)
     salesman = fields.IntField(null=True)
