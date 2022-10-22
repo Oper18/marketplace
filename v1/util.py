@@ -28,7 +28,7 @@ async def export_stat_xls(date_start, date_stop):
                 "product_id": product.id,
                 "product_name": product.name,
                 "price": product.price,
-                "serial_number": product.article_number,
+                "article_number": product.article_number,
                 "size": product.size,
                 "buyer": item.buyer,
                 "salesman": item.salesman,
