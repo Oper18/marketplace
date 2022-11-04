@@ -100,7 +100,7 @@ async def get_products(
     if name:
         products = products.filter(name__icontains=name)
     if article_number:
-        products = products.filter(article_number__icontains=article_number)
+        products = products.filter(article_number=article_number)
     if rent is not None:
         products = products.filter(rent=rent)
     if service is not None:
