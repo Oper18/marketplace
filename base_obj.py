@@ -136,3 +136,17 @@ def form_model_doc_generation(model):
                 res[i]["items"] = form_model_doc_generation(model.__dict__["__fields__"][i].type_)
 
     return res
+
+
+class BaseArrGenerator:
+    def __init__(self, arr):
+        self.arr = iter(arr)
+
+    def __aiter__(self):
+        return self
+
+    async def __anext__(self):
+        try:
+            return next(self.arr)
+        except:
+            raise StopAsyncIteration

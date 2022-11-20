@@ -735,3 +735,125 @@ class ProductItemsStat(object):
             market__pb2.ProductItemsStatResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class SailsStatStub(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.SailsStat = channel.unary_unary(
+                '/messenger.SailsStat/SailsStat',
+                request_serializer=market__pb2.SailsStatRequest.SerializeToString,
+                response_deserializer=market__pb2.SailsStatResponse.FromString,
+                )
+
+
+class SailsStatServicer(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def SailsStat(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_SailsStatServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'SailsStat': grpc.unary_unary_rpc_method_handler(
+                    servicer.SailsStat,
+                    request_deserializer=market__pb2.SailsStatRequest.FromString,
+                    response_serializer=market__pb2.SailsStatResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'messenger.SailsStat', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class SailsStat(object):
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def SailsStat(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/messenger.SailsStat/SailsStat',
+            market__pb2.SailsStatRequest.SerializeToString,
+            market__pb2.SailsStatResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class DetailSailsStatStub(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.DetailSailsStat = channel.unary_unary(
+                '/messenger.DetailSailsStat/DetailSailsStat',
+                request_serializer=market__pb2.SailsStatRequest.SerializeToString,
+                response_deserializer=market__pb2.DetailSailsStatResponse.FromString,
+                )
+
+
+class DetailSailsStatServicer(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def DetailSailsStat(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_DetailSailsStatServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'DetailSailsStat': grpc.unary_unary_rpc_method_handler(
+                    servicer.DetailSailsStat,
+                    request_deserializer=market__pb2.SailsStatRequest.FromString,
+                    response_serializer=market__pb2.DetailSailsStatResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'messenger.DetailSailsStat', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class DetailSailsStat(object):
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def DetailSailsStat(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/messenger.DetailSailsStat/DetailSailsStat',
+            market__pb2.SailsStatRequest.SerializeToString,
+            market__pb2.DetailSailsStatResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

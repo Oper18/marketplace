@@ -114,4 +114,7 @@ class ProductItems(Model, ExtendedModel):
     async def create(cls: Type[MODEL], **kwargs: Any) -> MODEL:
         if int(kwargs.get("buyer", 0)) == 0:
             kwargs["buyer"] = None
+        if int(kwargs.get("salesman", 0)) == 0:
+            kwargs["salesman"] = None
         return await super(ProductItems, cls).create(**kwargs)
+

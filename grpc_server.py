@@ -26,6 +26,8 @@ from v1.shop.manager import (
 
 from v1.util import export_stat_xls
 
+from statistic.handler import SailsStat
+
 from settings import DATABASE
 
 
@@ -264,6 +266,36 @@ class ProductItemsStatServer(
         return market_pb2.ProductItemsStatResponse(statistic=stat)
 
 
+class SailsStatServer(market_pb2_grpc.SailsStatServicer):
+    async def SailsStat(
+        self,
+        request: market_pb2.SailsStatRequest,
+        context: grpc.aio.ServicerContext,
+    ) -> market_pb2.SailsStatResponse:
+        stat_obj = SailsStat(
+            date_start=request.date_start,
+            date_stop=request.date_stop,
+        )
+        stat = await stat_obj.get_sails_stat()
+        return market_pb2.SailsStatResponse(statistic=stat)
+
+
+class DetailSailsStatServer(market_pb2_grpc.SailsStatServicer):
+    async def DetailSailsStat(
+        self,
+        request: market_pb2.SailsStatRequest,
+        context: grpc.aio.ServicerContext,
+    ) -> market_pb2.DetailSailsStatResponse:
+        stat_obj = DetailSailsStat(
+            date_start=request.date_start,
+            date_stop=request.date_stop,
+            detail=True,
+        )
+        stat = await stat_obj.get_sails_stat()
+
+        return market_pb2.DetailSailsStatResponse(statistic=stat)
+
+
 async def serve() -> None:
     await Tortoise.init(
         db_url="postgres://{}:{}@{}:5432/{}".format(
@@ -311,6 +343,12 @@ async def serve() -> None:
     )
     market_pb2_grpc.add_ProductItemsStatServicer_to_server(
         ProductItemsStatServer(), server
+    )
+    market_pb2_grpc.add_SailsStatServicer_to_server(
+        SailsStatServer(), server
+    )
+    market_pb2_grpc.add_DetailSailsStatServicer_to_server(
+        DetailSailsStatServer(), server
     )
 
     listen_addr = '[::]:50051'

@@ -280,18 +280,6 @@ class ProductItemsResource(Model):
             placeholder="Search for product items",
         ),
         filters.Search(
-            name="size",
-            label="Item size",
-            search_mode="icontains",
-            placeholder="Search for product item size",
-        ),
-        filters.Search(
-            name="serial_number",
-            label="Item serial number",
-            search_mode="icontains",
-            placeholder="Search for product item serial number",
-        ),
-        filters.Search(
             name="buyer",
             label="Item buyer pk",
             search_mode="equal",
@@ -301,22 +289,16 @@ class ProductItemsResource(Model):
     fields = [
         "id",
         "product",
-        Field(
-            name="size",
-            label="",
-            input_=inputs.Text(null=True),
-        ),
-        Field(
-            name="serial_number",
-            label="",
-            input_=inputs.Text(null=True),
-        ),
         "sold",
         Field(
             name="buyer",
             label="",
             input_=inputs.Number(null=True, default=None),
         ),
+        "salesman",
+        "rent_time_start",
+        "rent_time_stop",
         "created_at",
         "updated_at",
     ]
+

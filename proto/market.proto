@@ -258,3 +258,61 @@ message ProductItemsStatResponse {
 service ProductItemsStat {
   rpc ProductItemsStat(ProductItemsStatRequest) returns (ProductItemsStatResponse) {}
 }
+
+message SailsStatRequest {
+  string date_start = 1;
+  string date_stop = 2;
+}
+
+message CategorySailsStatResponse {
+  string category = 1;
+  int64 category_id = 2;
+  float amount = 3;
+}
+
+message SalesmanCategorySailsStatResponse {
+  int64 salesman = 1;
+  repeated CategorySailsStatResponse data = 2;
+}
+
+message DateSailsStatResponse {
+  string date = 1;
+  repeated SalesmanCategorySailsStatResponse data = 2;
+}
+
+message SailsStatResponse {
+  repeated DateSailsStatResponse statistic = 1;
+}
+
+service SailsStat {
+  rpc SailsStat(SailsStatRequest) returns (SailsStatResponse) {}
+}
+
+message CategoryDetailSailsStatResponse {
+  int64 id = 1;
+  string product = 2;
+  float price = 3;
+  int64 buyer = 4;
+  string rent_time_start = 5;
+  string rent_time_stop = 6;
+  bool sold = 7;
+  string category = 8;
+}
+
+message SalesmanCategoryDetailSailsStatResponse {
+  int64 salesman = 1;
+  repeated CategoryDetailSailsStatResponse data = 2;
+}
+
+message DateDetailSailsStatResponse {
+  string date = 1;
+  repeated SalesmanCategoryDetailSailsStatResponse data = 2;
+}
+
+message DetailSailsStatResponse {
+  repeated DateDetailSailsStatResponse statistic = 1;
+}
+
+service DetailSailsStat {
+  rpc DetailSailsStat(SailsStatRequest) returns (DetailSailsStatResponse) {}
+}
