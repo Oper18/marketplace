@@ -15,7 +15,7 @@ async def export_stat_xls(date_start, date_stop):
     sold_product_items = list()
     
     for item in product_items:
-        product = await item.product.first()
+        product = await item.product
         if not lost_product_items.get(product.id):
             lost_product_items[product.id] = await ProductItems.filter(
                 product=product,
