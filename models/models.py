@@ -104,6 +104,8 @@ class ProductItems(Model, ExtendedModel):
     salesman = fields.IntField(null=True)
     rent_time_start = fields.DatetimeField(null=True)
     rent_time_stop = fields.DatetimeField(null=True)
+    payed_amount = fields.DecimalField(max_digits=10, decimal_places=2, null=True)
+    payment_type = fields.IntField(null=True)
     created_at = fields.DatetimeField(auto_now_add=True)
     updated_at = fields.DatetimeField(auto_now=True)
 

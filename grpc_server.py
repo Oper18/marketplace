@@ -227,6 +227,8 @@ class BuyProductItemServer(market_pb2_grpc.BuyProductItemServicer):
             rent_time_start=request.rent_time_start,
             rent_time_stop=request.rent_time_stop,
             salesman=request.salesman,
+            payed_amount=request.payed_amount,
+            payment_type=request.payment_type,
         )
         return market_pb2.ProductItemBuyResponse(message=res)
 

@@ -327,6 +327,8 @@ async def buy_rent_product_item(
     rent_time_start: str = None,
     rent_time_stop: str = None,
     salesman: int = None,
+    payed_amount: float = None,
+    payment_type: int = None,
 ):
     if not product_id and not item_pk and not article_number:
         return False
@@ -348,6 +350,13 @@ async def buy_rent_product_item(
     if rent_time_start and rent_time_stop:
         product_item.rent_time_start = dateutil.parser.parse(rent_time_start)
         product_item.rent_time_stop = dateutil.parser.parse(rent_time_stop)
+
+    if not payed_amount:
+        product = await product_item.product
+        payed_amount = product.price
+
+    product_item.payed_amount = payed_amount
+    product_item.payment_type = payment_type
 
     await product_item.save()
     return True

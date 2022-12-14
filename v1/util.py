@@ -7,7 +7,7 @@ from models.models import ProductItems
 async def export_stat_xls(date_start, date_stop):
     product_items = await ProductItems.filter(
         updated_at__gte=date_start,
-        updated_at__lte=date_stop,
+        updated_at__lt=date_stop,
         sold=True,
     ).select_related("product")
 
@@ -16,6 +16,7 @@ async def export_stat_xls(date_start, date_stop):
     
     for item in product_items:
         product = await item.product
+        categories = await product.category.all()
         if not lost_product_items.get(product.id):
             lost_product_items[product.id] = await ProductItems.filter(
                 product=product,
@@ -40,6 +41,9 @@ async def export_stat_xls(date_start, date_stop):
                 if item.rent_time_start and item.rent_time_stop
                 else "",
                 "sold_date": item.updated_at.date().isoformat(),
+                "payed_amount": item.payed_amount,
+                "payment_type": item.payment_type,
+                "categories": [c.name for c in categories],
             }
         )
 

@@ -198,6 +198,8 @@ message ProductItemBuyRequest {
   int64 salesman = 5;
   int64 product_id = 6;
   string article_number = 7;
+  float payed_amount = 8;
+  int64 payment_type = 9;
 }
 
 message ProductItemBuyResponse {
@@ -249,6 +251,9 @@ message ProductItemStatResponse {
   int64 lost_items = 9;
   string rent_time_space = 10;
   string sold_date = 11;
+  float payed_amount = 12;
+  int64 payment_type = 13;
+  repeated string categories = 14;
 }
 
 message ProductItemsStatResponse {
