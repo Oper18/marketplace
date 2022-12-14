@@ -41,7 +41,7 @@ async def export_stat_xls(date_start, date_stop):
                 if item.rent_time_start and item.rent_time_stop
                 else "",
                 "sold_date": item.updated_at.date().isoformat(),
-                "payed_amount": item.payed_amount,
+                "payed_amount": item.payed_amount if item.payed_amount is not None else product.price,
                 "payment_type": item.payment_type,
                 "categories": [c.name for c in categories],
             }
