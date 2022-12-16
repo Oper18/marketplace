@@ -28,7 +28,7 @@ async def export_stat_xls(date_start, date_stop):
                 "id": item.id,
                 "product_id": product.id,
                 "product_name": product.name,
-                "price": product.price,
+                "price": float(product.price) - float(product.price) * float(product.discount) / 100,
                 "article_number": product.article_number,
                 "size": product.size,
                 "buyer": item.buyer,
