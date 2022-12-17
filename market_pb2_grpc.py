@@ -857,3 +857,186 @@ class DetailSailsStat(object):
             market__pb2.DetailSailsStatResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class DebtorsStub(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.Debtors = channel.unary_unary(
+                '/messenger.Debtors/Debtors',
+                request_serializer=market__pb2.DebtorsRequest.SerializeToString,
+                response_deserializer=market__pb2.DebtorsResponse.FromString,
+                )
+
+
+class DebtorsServicer(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def Debtors(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_DebtorsServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'Debtors': grpc.unary_unary_rpc_method_handler(
+                    servicer.Debtors,
+                    request_deserializer=market__pb2.DebtorsRequest.FromString,
+                    response_serializer=market__pb2.DebtorsResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'messenger.Debtors', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class Debtors(object):
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def Debtors(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/messenger.Debtors/Debtors',
+            market__pb2.DebtorsRequest.SerializeToString,
+            market__pb2.DebtorsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class BuyerDeptsStub(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.BuyerDepts = channel.unary_unary(
+                '/messenger.BuyerDepts/BuyerDepts',
+                request_serializer=market__pb2.BuyerDeptsRequest.SerializeToString,
+                response_deserializer=market__pb2.ProductItemsStatResponse.FromString,
+                )
+
+
+class BuyerDeptsServicer(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def BuyerDepts(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_BuyerDeptsServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'BuyerDepts': grpc.unary_unary_rpc_method_handler(
+                    servicer.BuyerDepts,
+                    request_deserializer=market__pb2.BuyerDeptsRequest.FromString,
+                    response_serializer=market__pb2.ProductItemsStatResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'messenger.BuyerDepts', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class BuyerDepts(object):
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def BuyerDepts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/messenger.BuyerDepts/BuyerDepts',
+            market__pb2.BuyerDeptsRequest.SerializeToString,
+            market__pb2.ProductItemsStatResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class ProductItemEditStub(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.ProductItemEdit = channel.unary_unary(
+                '/messenger.ProductItemEdit/ProductItemEdit',
+                request_serializer=market__pb2.ProductItemRequest.SerializeToString,
+                response_deserializer=market__pb2.ProductItemResponse.FromString,
+                )
+
+
+class ProductItemEditServicer(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def ProductItemEdit(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_ProductItemEditServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'ProductItemEdit': grpc.unary_unary_rpc_method_handler(
+                    servicer.ProductItemEdit,
+                    request_deserializer=market__pb2.ProductItemRequest.FromString,
+                    response_serializer=market__pb2.ProductItemResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'messenger.ProductItemEdit', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class ProductItemEdit(object):
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def ProductItemEdit(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/messenger.ProductItemEdit/ProductItemEdit',
+            market__pb2.ProductItemRequest.SerializeToString,
+            market__pb2.ProductItemResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

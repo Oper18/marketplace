@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cmarket.proto\x12\tmessenger\"2\n\x11\x43\x61tegoriesRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\"X\n\x14\x43\x61tegoryItemResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\ncreated_at\x18\x03 \x01(\t\x12\x12\n\nupdated_at\x18\x04 \x01(\t\"S\n\x12\x43\x61tegoriesResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.messenger.CategoryItemResponse\"1\n\x15\x43\x61tegoryManageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\"-\n\x0c\x42randRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\"c\n\x11\x42randItemResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\t\x12\x12\n\ncreated_at\x18\x04 \x01(\t\x12\x12\n\nupdated_at\x18\x05 \x01(\t\"K\n\rBrandResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.messenger.BrandItemResponse\"I\n\x12\x42randManageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\x0c\x12\x0b\n\x03\x65xt\x18\x04 \x01(\t\"\xce\x01\n\x0eProductRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x12\n\nbrand_name\x18\x03 \x01(\x03\x12\x10\n\x08\x63\x61tegory\x18\x04 \x01(\x03\x12\x0b\n\x03sex\x18\x05 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x06 \x01(\x03\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x16\n\x0e\x61rticle_number\x18\x08 \x01(\t\x12\n\n\x02id\x18\t \x01(\x03\x12\x0c\n\x04rent\x18\n \x01(\x03\x12\x0f\n\x07service\x18\x0b \x01(\x03\x12\x0c\n\x04size\x18\x0c \x01(\t\"\xff\x02\n\x0fProductResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x30\n\nbrand_name\x18\x02 \x01(\x0b\x32\x1c.messenger.BrandItemResponse\x12\x31\n\x08\x63\x61tegory\x18\x03 \x03(\x0b\x32\x1f.messenger.CategoryItemResponse\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\r\n\x05\x63olor\x18\x06 \x01(\t\x12\x0b\n\x03sex\x18\x07 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x08 \x01(\x03\x12\x16\n\x0e\x61rticle_number\x18\t \x01(\t\x12\r\n\x05price\x18\n \x01(\x02\x12\x10\n\x08\x63urrency\x18\x0b \x01(\t\x12\x10\n\x08\x64iscount\x18\x0c \x01(\x02\x12\x0c\n\x04rent\x18\r \x01(\x08\x12\x0f\n\x07service\x18\x0e \x01(\x08\x12\x0f\n\x07gallery\x18\x0f \x03(\t\x12\x12\n\ncreated_at\x18\x10 \x01(\t\x12\x12\n\nupdated_at\x18\x11 \x01(\t\x12\x0c\n\x04size\x18\x12 \x01(\t\"O\n\x13ProductListResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.messenger.ProductResponse\"3\n\x15ProductGalleryRequest\x12\x0b\n\x03\x65xt\x18\x01 \x01(\t\x12\r\n\x05\x62ytes\x18\x02 \x01(\x0c\"\xc7\x02\n\x14ProductManageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x12\n\nbrand_name\x18\x04 \x01(\x03\x12\x10\n\x08\x63\x61tegory\x18\x05 \x03(\x03\x12\r\n\x05\x63olor\x18\x06 \x01(\t\x12\x0b\n\x03sex\x18\x07 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x08 \x01(\x03\x12\x16\n\x0e\x61rticle_number\x18\t \x01(\t\x12\r\n\x05price\x18\n \x01(\x02\x12\x10\n\x08\x63urrency\x18\x0b \x01(\t\x12\x10\n\x08\x64iscount\x18\x0c \x01(\x02\x12\x0c\n\x04rent\x18\r \x01(\x08\x12\x0f\n\x07service\x18\x0e \x01(\x08\x12-\n\x03pgr\x18\x0f \x03(\x0b\x32 .messenger.ProductGalleryRequest\x12\n\n\x02\x65g\x18\x10 \x03(\t\x12\x0c\n\x04size\x18\x11 \x01(\t\"\x84\x01\n\x13ProductItemsRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x0f\n\x07product\x18\x03 \x01(\x03\x12\x0c\n\x04sold\x18\x04 \x01(\x08\x12\x17\n\x0frent_date_start\x18\x05 \x01(\t\x12\x16\n\x0erent_date_stop\x18\x06 \x01(\t\"\xae\x01\n\x13ProductItemResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12+\n\x07product\x18\x02 \x01(\x0b\x32\x1a.messenger.ProductResponse\x12\x0c\n\x04sold\x18\x03 \x01(\x08\x12\r\n\x05\x62uyer\x18\x04 \x01(\x03\x12\x10\n\x08salesman\x18\x05 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x06 \x01(\t\x12\x16\n\x0erent_time_stop\x18\x07 \x01(\t\"X\n\x18ProductItemsListResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12-\n\x05items\x18\x02 \x03(\x0b\x32\x1e.messenger.ProductItemResponse\"t\n\x18ProductItemCreateRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04sold\x18\x02 \x01(\x08\x12\r\n\x05\x62uyer\x18\x03 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x04 \x01(\t\x12\x16\n\x0erent_time_stop\x18\x05 \x01(\t\"d\n\x1dProductItemsListCreateRequest\x12\x0f\n\x07product\x18\x01 \x01(\x03\x12\x32\n\x05items\x18\x02 \x03(\x0b\x32#.messenger.ProductItemCreateRequest\"I\n\x1aProductItemsCreateResponse\x12+\n\x03\x61rr\x18\x01 \x03(\x0b\x32\x1e.messenger.ProductItemResponse\"\xd2\x01\n\x15ProductItemBuyRequest\x12\x0f\n\x07item_pk\x18\x01 \x01(\x03\x12\r\n\x05\x62uyer\x18\x02 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x03 \x01(\t\x12\x16\n\x0erent_time_stop\x18\x04 \x01(\t\x12\x10\n\x08salesman\x18\x05 \x01(\x03\x12\x12\n\nproduct_id\x18\x06 \x01(\x03\x12\x16\n\x0e\x61rticle_number\x18\x07 \x01(\t\x12\x14\n\x0cpayed_amount\x18\x08 \x01(\x02\x12\x14\n\x0cpayment_type\x18\t \x01(\x03\")\n\x16ProductItemBuyResponse\x12\x0f\n\x07message\x18\x01 \x01(\x08\"+\n\x18ProductItemRemoveRequest\x12\x0f\n\x07item_pk\x18\x01 \x01(\x03\",\n\x19ProductItemRemoveResponse\x12\x0f\n\x07message\x18\x01 \x01(\x08\"*\n\x14ProductRemoveRequest\x12\x12\n\nproduct_pk\x18\x01 \x01(\x03\"(\n\x15ProductRemoveResponse\x12\x0f\n\x07message\x18\x01 \x01(\x08\"@\n\x17ProductItemsStatRequest\x12\x12\n\ndate_start\x18\x01 \x01(\t\x12\x11\n\tdate_stop\x18\x02 \x01(\t\"\xa5\x02\n\x17ProductItemStatResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x12\n\nproduct_id\x18\x02 \x01(\x03\x12\x14\n\x0cproduct_name\x18\x03 \x01(\t\x12\r\n\x05price\x18\x04 \x01(\x02\x12\x16\n\x0e\x61rticle_number\x18\x05 \x01(\t\x12\x0c\n\x04size\x18\x06 \x01(\t\x12\r\n\x05\x62uyer\x18\x07 \x01(\x03\x12\x10\n\x08salesman\x18\x08 \x01(\x03\x12\x12\n\nlost_items\x18\t \x01(\x03\x12\x17\n\x0frent_time_space\x18\n \x01(\t\x12\x11\n\tsold_date\x18\x0b \x01(\t\x12\x14\n\x0cpayed_amount\x18\x0c \x01(\x02\x12\x14\n\x0cpayment_type\x18\r \x01(\x03\x12\x12\n\ncategories\x18\x0e \x03(\t\"Q\n\x18ProductItemsStatResponse\x12\x35\n\tstatistic\x18\x01 \x03(\x0b\x32\".messenger.ProductItemStatResponse\"9\n\x10SailsStatRequest\x12\x12\n\ndate_start\x18\x01 \x01(\t\x12\x11\n\tdate_stop\x18\x02 \x01(\t\"R\n\x19\x43\x61tegorySailsStatResponse\x12\x10\n\x08\x63\x61tegory\x18\x01 \x01(\t\x12\x13\n\x0b\x63\x61tegory_id\x18\x02 \x01(\x03\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x02\"i\n!SalesmanCategorySailsStatResponse\x12\x10\n\x08salesman\x18\x01 \x01(\x03\x12\x32\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32$.messenger.CategorySailsStatResponse\"a\n\x15\x44\x61teSailsStatResponse\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12:\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32,.messenger.SalesmanCategorySailsStatResponse\"H\n\x11SailsStatResponse\x12\x33\n\tstatistic\x18\x01 \x03(\x0b\x32 .messenger.DateSailsStatResponse\"\xad\x01\n\x1f\x43\x61tegoryDetailSailsStatResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0f\n\x07product\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\x02\x12\r\n\x05\x62uyer\x18\x04 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x05 \x01(\t\x12\x16\n\x0erent_time_stop\x18\x06 \x01(\t\x12\x0c\n\x04sold\x18\x07 \x01(\x08\x12\x10\n\x08\x63\x61tegory\x18\x08 \x01(\t\"u\n\'SalesmanCategoryDetailSailsStatResponse\x12\x10\n\x08salesman\x18\x01 \x01(\x03\x12\x38\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32*.messenger.CategoryDetailSailsStatResponse\"m\n\x1b\x44\x61teDetailSailsStatResponse\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12@\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\x32.messenger.SalesmanCategoryDetailSailsStatResponse\"T\n\x17\x44\x65tailSailsStatResponse\x12\x39\n\tstatistic\x18\x01 \x03(\x0b\x32&.messenger.DateDetailSailsStatResponse2Y\n\rGetCategories\x12H\n\x07GetCats\x12\x1c.messenger.CategoriesRequest\x1a\x1d.messenger.CategoriesResponse\"\x00\x32\x63\n\x0eManageCategory\x12Q\n\nManageCats\x12 .messenger.CategoryManageRequest\x1a\x1f.messenger.CategoryItemResponse\"\x00\x32R\n\x0eGetBrandsNames\x12@\n\tGetBrands\x12\x17.messenger.BrandRequest\x1a\x18.messenger.BrandResponse\"\x00\x32\x62\n\x11ManageBrandsNames\x12M\n\x0cManageBrands\x12\x1d.messenger.BrandManageRequest\x1a\x1c.messenger.BrandItemResponse\"\x00\x32V\n\x0bGetProducts\x12G\n\x08GetProds\x12\x19.messenger.ProductRequest\x1a\x1e.messenger.ProductListResponse\"\x00\x32^\n\x0eManageProducts\x12L\n\x0bManageProds\x12\x1f.messenger.ProductManageRequest\x1a\x1a.messenger.ProductResponse\"\x00\x32i\n\x10GetProductsItems\x12U\n\x0cGetProdItems\x12\x1e.messenger.ProductItemsRequest\x1a#.messenger.ProductItemsListResponse\"\x00\x32{\n\x13\x43reateProductsItems\x12\x64\n\x0f\x43reateProdItems\x12(.messenger.ProductItemsListCreateRequest\x1a%.messenger.ProductItemsCreateResponse\"\x00\x32\x66\n\x0e\x42uyProductItem\x12T\n\x0b\x42uyProdItem\x12 .messenger.ProductItemBuyRequest\x1a!.messenger.ProductItemBuyResponse\"\x00\x32r\n\x11RemoveProductItem\x12]\n\x0eRemoveProdItem\x12#.messenger.ProductItemRemoveRequest\x1a$.messenger.ProductItemRemoveResponse\"\x00\x32\x65\n\rRemoveProduct\x12T\n\rRemoveProduct\x12\x1f.messenger.ProductRemoveRequest\x1a .messenger.ProductRemoveResponse\"\x00\x32q\n\x10ProductItemsStat\x12]\n\x10ProductItemsStat\x12\".messenger.ProductItemsStatRequest\x1a#.messenger.ProductItemsStatResponse\"\x00\x32U\n\tSailsStat\x12H\n\tSailsStat\x12\x1b.messenger.SailsStatRequest\x1a\x1c.messenger.SailsStatResponse\"\x00\x32g\n\x0f\x44\x65tailSailsStat\x12T\n\x0f\x44\x65tailSailsStat\x12\x1b.messenger.SailsStatRequest\x1a\".messenger.DetailSailsStatResponse\"\x00\x42\x10Z\x0e./proto;marketb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cmarket.proto\x12\tmessenger\"2\n\x11\x43\x61tegoriesRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\"X\n\x14\x43\x61tegoryItemResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\ncreated_at\x18\x03 \x01(\t\x12\x12\n\nupdated_at\x18\x04 \x01(\t\"S\n\x12\x43\x61tegoriesResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12.\n\x05items\x18\x02 \x03(\x0b\x32\x1f.messenger.CategoryItemResponse\"1\n\x15\x43\x61tegoryManageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\"-\n\x0c\x42randRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\"c\n\x11\x42randItemResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\t\x12\x12\n\ncreated_at\x18\x04 \x01(\t\x12\x12\n\nupdated_at\x18\x05 \x01(\t\"K\n\rBrandResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12+\n\x05items\x18\x02 \x03(\x0b\x32\x1c.messenger.BrandItemResponse\"I\n\x12\x42randManageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04logo\x18\x03 \x01(\x0c\x12\x0b\n\x03\x65xt\x18\x04 \x01(\t\"\xce\x01\n\x0eProductRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x12\n\nbrand_name\x18\x03 \x01(\x03\x12\x10\n\x08\x63\x61tegory\x18\x04 \x01(\x03\x12\x0b\n\x03sex\x18\x05 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x06 \x01(\x03\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x16\n\x0e\x61rticle_number\x18\x08 \x01(\t\x12\n\n\x02id\x18\t \x01(\x03\x12\x0c\n\x04rent\x18\n \x01(\x03\x12\x0f\n\x07service\x18\x0b \x01(\x03\x12\x0c\n\x04size\x18\x0c \x01(\t\"\xff\x02\n\x0fProductResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x30\n\nbrand_name\x18\x02 \x01(\x0b\x32\x1c.messenger.BrandItemResponse\x12\x31\n\x08\x63\x61tegory\x18\x03 \x03(\x0b\x32\x1f.messenger.CategoryItemResponse\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\r\n\x05\x63olor\x18\x06 \x01(\t\x12\x0b\n\x03sex\x18\x07 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x08 \x01(\x03\x12\x16\n\x0e\x61rticle_number\x18\t \x01(\t\x12\r\n\x05price\x18\n \x01(\x02\x12\x10\n\x08\x63urrency\x18\x0b \x01(\t\x12\x10\n\x08\x64iscount\x18\x0c \x01(\x02\x12\x0c\n\x04rent\x18\r \x01(\x08\x12\x0f\n\x07service\x18\x0e \x01(\x08\x12\x0f\n\x07gallery\x18\x0f \x03(\t\x12\x12\n\ncreated_at\x18\x10 \x01(\t\x12\x12\n\nupdated_at\x18\x11 \x01(\t\x12\x0c\n\x04size\x18\x12 \x01(\t\"O\n\x13ProductListResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12)\n\x05items\x18\x02 \x03(\x0b\x32\x1a.messenger.ProductResponse\"3\n\x15ProductGalleryRequest\x12\x0b\n\x03\x65xt\x18\x01 \x01(\t\x12\r\n\x05\x62ytes\x18\x02 \x01(\x0c\"\xc7\x02\n\x14ProductManageRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x12\n\nbrand_name\x18\x04 \x01(\x03\x12\x10\n\x08\x63\x61tegory\x18\x05 \x03(\x03\x12\r\n\x05\x63olor\x18\x06 \x01(\t\x12\x0b\n\x03sex\x18\x07 \x01(\x03\x12\x0b\n\x03\x61ge\x18\x08 \x01(\x03\x12\x16\n\x0e\x61rticle_number\x18\t \x01(\t\x12\r\n\x05price\x18\n \x01(\x02\x12\x10\n\x08\x63urrency\x18\x0b \x01(\t\x12\x10\n\x08\x64iscount\x18\x0c \x01(\x02\x12\x0c\n\x04rent\x18\r \x01(\x08\x12\x0f\n\x07service\x18\x0e \x01(\x08\x12-\n\x03pgr\x18\x0f \x03(\x0b\x32 .messenger.ProductGalleryRequest\x12\n\n\x02\x65g\x18\x10 \x03(\t\x12\x0c\n\x04size\x18\x11 \x01(\t\"\x84\x01\n\x13ProductItemsRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\x12\x0e\n\x06offset\x18\x02 \x01(\x03\x12\x0f\n\x07product\x18\x03 \x01(\x03\x12\x0c\n\x04sold\x18\x04 \x01(\x08\x12\x17\n\x0frent_date_start\x18\x05 \x01(\t\x12\x16\n\x0erent_date_stop\x18\x06 \x01(\t\"\xda\x01\n\x13ProductItemResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12+\n\x07product\x18\x02 \x01(\x0b\x32\x1a.messenger.ProductResponse\x12\x0c\n\x04sold\x18\x03 \x01(\x08\x12\r\n\x05\x62uyer\x18\x04 \x01(\x03\x12\x10\n\x08salesman\x18\x05 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x06 \x01(\t\x12\x16\n\x0erent_time_stop\x18\x07 \x01(\t\x12\x14\n\x0cpayed_amount\x18\x08 \x01(\x02\x12\x14\n\x0cpayment_type\x18\t \x01(\x03\"X\n\x18ProductItemsListResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12-\n\x05items\x18\x02 \x03(\x0b\x32\x1e.messenger.ProductItemResponse\"t\n\x18ProductItemCreateRequest\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04sold\x18\x02 \x01(\x08\x12\r\n\x05\x62uyer\x18\x03 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x04 \x01(\t\x12\x16\n\x0erent_time_stop\x18\x05 \x01(\t\"d\n\x1dProductItemsListCreateRequest\x12\x0f\n\x07product\x18\x01 \x01(\x03\x12\x32\n\x05items\x18\x02 \x03(\x0b\x32#.messenger.ProductItemCreateRequest\"I\n\x1aProductItemsCreateResponse\x12+\n\x03\x61rr\x18\x01 \x03(\x0b\x32\x1e.messenger.ProductItemResponse\"\xd2\x01\n\x15ProductItemBuyRequest\x12\x0f\n\x07item_pk\x18\x01 \x01(\x03\x12\r\n\x05\x62uyer\x18\x02 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x03 \x01(\t\x12\x16\n\x0erent_time_stop\x18\x04 \x01(\t\x12\x10\n\x08salesman\x18\x05 \x01(\x03\x12\x12\n\nproduct_id\x18\x06 \x01(\x03\x12\x16\n\x0e\x61rticle_number\x18\x07 \x01(\t\x12\x14\n\x0cpayed_amount\x18\x08 \x01(\x02\x12\x14\n\x0cpayment_type\x18\t \x01(\x03\")\n\x16ProductItemBuyResponse\x12\x0f\n\x07message\x18\x01 \x01(\x08\"+\n\x18ProductItemRemoveRequest\x12\x0f\n\x07item_pk\x18\x01 \x01(\x03\",\n\x19ProductItemRemoveResponse\x12\x0f\n\x07message\x18\x01 \x01(\x08\"*\n\x14ProductRemoveRequest\x12\x12\n\nproduct_pk\x18\x01 \x01(\x03\"(\n\x15ProductRemoveResponse\x12\x0f\n\x07message\x18\x01 \x01(\x08\"@\n\x17ProductItemsStatRequest\x12\x12\n\ndate_start\x18\x01 \x01(\t\x12\x11\n\tdate_stop\x18\x02 \x01(\t\"\xa5\x02\n\x17ProductItemStatResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x12\n\nproduct_id\x18\x02 \x01(\x03\x12\x14\n\x0cproduct_name\x18\x03 \x01(\t\x12\r\n\x05price\x18\x04 \x01(\x02\x12\x16\n\x0e\x61rticle_number\x18\x05 \x01(\t\x12\x0c\n\x04size\x18\x06 \x01(\t\x12\r\n\x05\x62uyer\x18\x07 \x01(\x03\x12\x10\n\x08salesman\x18\x08 \x01(\x03\x12\x12\n\nlost_items\x18\t \x01(\x03\x12\x17\n\x0frent_time_space\x18\n \x01(\t\x12\x11\n\tsold_date\x18\x0b \x01(\t\x12\x14\n\x0cpayed_amount\x18\x0c \x01(\x02\x12\x14\n\x0cpayment_type\x18\r \x01(\x03\x12\x12\n\ncategories\x18\x0e \x03(\t\"Q\n\x18ProductItemsStatResponse\x12\x35\n\tstatistic\x18\x01 \x03(\x0b\x32\".messenger.ProductItemStatResponse\"9\n\x10SailsStatRequest\x12\x12\n\ndate_start\x18\x01 \x01(\t\x12\x11\n\tdate_stop\x18\x02 \x01(\t\"R\n\x19\x43\x61tegorySailsStatResponse\x12\x10\n\x08\x63\x61tegory\x18\x01 \x01(\t\x12\x13\n\x0b\x63\x61tegory_id\x18\x02 \x01(\x03\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x02\"i\n!SalesmanCategorySailsStatResponse\x12\x10\n\x08salesman\x18\x01 \x01(\x03\x12\x32\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32$.messenger.CategorySailsStatResponse\"a\n\x15\x44\x61teSailsStatResponse\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12:\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32,.messenger.SalesmanCategorySailsStatResponse\"H\n\x11SailsStatResponse\x12\x33\n\tstatistic\x18\x01 \x03(\x0b\x32 .messenger.DateSailsStatResponse\"\xad\x01\n\x1f\x43\x61tegoryDetailSailsStatResponse\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0f\n\x07product\x18\x02 \x01(\t\x12\r\n\x05price\x18\x03 \x01(\x02\x12\r\n\x05\x62uyer\x18\x04 \x01(\x03\x12\x17\n\x0frent_time_start\x18\x05 \x01(\t\x12\x16\n\x0erent_time_stop\x18\x06 \x01(\t\x12\x0c\n\x04sold\x18\x07 \x01(\x08\x12\x10\n\x08\x63\x61tegory\x18\x08 \x01(\t\"u\n\'SalesmanCategoryDetailSailsStatResponse\x12\x10\n\x08salesman\x18\x01 \x01(\x03\x12\x38\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32*.messenger.CategoryDetailSailsStatResponse\"m\n\x1b\x44\x61teDetailSailsStatResponse\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12@\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\x32.messenger.SalesmanCategoryDetailSailsStatResponse\"T\n\x17\x44\x65tailSailsStatResponse\x12\x39\n\tstatistic\x18\x01 \x03(\x0b\x32&.messenger.DateDetailSailsStatResponse\"\x10\n\x0e\x44\x65\x62torsRequest\"\"\n\x0f\x44\x65\x62torsResponse\x12\x0f\n\x07\x64\x65\x62tors\x18\x01 \x03(\x03\"\"\n\x11\x42uyerDeptsRequest\x12\r\n\x05\x62uyer\x18\x01 \x01(\x03\"C\n\x12ProductItemRequest\x12\x17\n\x0fproduct_item_pk\x18\x01 \x01(\x03\x12\x14\n\x0cpayed_amount\x18\x02 \x01(\x02\x32Y\n\rGetCategories\x12H\n\x07GetCats\x12\x1c.messenger.CategoriesRequest\x1a\x1d.messenger.CategoriesResponse\"\x00\x32\x63\n\x0eManageCategory\x12Q\n\nManageCats\x12 .messenger.CategoryManageRequest\x1a\x1f.messenger.CategoryItemResponse\"\x00\x32R\n\x0eGetBrandsNames\x12@\n\tGetBrands\x12\x17.messenger.BrandRequest\x1a\x18.messenger.BrandResponse\"\x00\x32\x62\n\x11ManageBrandsNames\x12M\n\x0cManageBrands\x12\x1d.messenger.BrandManageRequest\x1a\x1c.messenger.BrandItemResponse\"\x00\x32V\n\x0bGetProducts\x12G\n\x08GetProds\x12\x19.messenger.ProductRequest\x1a\x1e.messenger.ProductListResponse\"\x00\x32^\n\x0eManageProducts\x12L\n\x0bManageProds\x12\x1f.messenger.ProductManageRequest\x1a\x1a.messenger.ProductResponse\"\x00\x32i\n\x10GetProductsItems\x12U\n\x0cGetProdItems\x12\x1e.messenger.ProductItemsRequest\x1a#.messenger.ProductItemsListResponse\"\x00\x32{\n\x13\x43reateProductsItems\x12\x64\n\x0f\x43reateProdItems\x12(.messenger.ProductItemsListCreateRequest\x1a%.messenger.ProductItemsCreateResponse\"\x00\x32\x66\n\x0e\x42uyProductItem\x12T\n\x0b\x42uyProdItem\x12 .messenger.ProductItemBuyRequest\x1a!.messenger.ProductItemBuyResponse\"\x00\x32r\n\x11RemoveProductItem\x12]\n\x0eRemoveProdItem\x12#.messenger.ProductItemRemoveRequest\x1a$.messenger.ProductItemRemoveResponse\"\x00\x32\x65\n\rRemoveProduct\x12T\n\rRemoveProduct\x12\x1f.messenger.ProductRemoveRequest\x1a .messenger.ProductRemoveResponse\"\x00\x32q\n\x10ProductItemsStat\x12]\n\x10ProductItemsStat\x12\".messenger.ProductItemsStatRequest\x1a#.messenger.ProductItemsStatResponse\"\x00\x32U\n\tSailsStat\x12H\n\tSailsStat\x12\x1b.messenger.SailsStatRequest\x1a\x1c.messenger.SailsStatResponse\"\x00\x32g\n\x0f\x44\x65tailSailsStat\x12T\n\x0f\x44\x65tailSailsStat\x12\x1b.messenger.SailsStatRequest\x1a\".messenger.DetailSailsStatResponse\"\x00\x32M\n\x07\x44\x65\x62tors\x12\x42\n\x07\x44\x65\x62tors\x12\x19.messenger.DebtorsRequest\x1a\x1a.messenger.DebtorsResponse\"\x00\x32_\n\nBuyerDepts\x12Q\n\nBuyerDepts\x12\x1c.messenger.BuyerDeptsRequest\x1a#.messenger.ProductItemsStatResponse\"\x00\x32\x65\n\x0fProductItemEdit\x12R\n\x0fProductItemEdit\x12\x1d.messenger.ProductItemRequest\x1a\x1e.messenger.ProductItemResponse\"\x00\x42\x10Z\x0e./proto;marketb\x06proto3')
 
 
 
@@ -55,6 +55,10 @@ _CATEGORYDETAILSAILSSTATRESPONSE = DESCRIPTOR.message_types_by_name['CategoryDet
 _SALESMANCATEGORYDETAILSAILSSTATRESPONSE = DESCRIPTOR.message_types_by_name['SalesmanCategoryDetailSailsStatResponse']
 _DATEDETAILSAILSSTATRESPONSE = DESCRIPTOR.message_types_by_name['DateDetailSailsStatResponse']
 _DETAILSAILSSTATRESPONSE = DESCRIPTOR.message_types_by_name['DetailSailsStatResponse']
+_DEBTORSREQUEST = DESCRIPTOR.message_types_by_name['DebtorsRequest']
+_DEBTORSRESPONSE = DESCRIPTOR.message_types_by_name['DebtorsResponse']
+_BUYERDEPTSREQUEST = DESCRIPTOR.message_types_by_name['BuyerDeptsRequest']
+_PRODUCTITEMREQUEST = DESCRIPTOR.message_types_by_name['ProductItemRequest']
 CategoriesRequest = _reflection.GeneratedProtocolMessageType('CategoriesRequest', (_message.Message,), {
   'DESCRIPTOR' : _CATEGORIESREQUEST,
   '__module__' : 'market_pb2'
@@ -314,6 +318,34 @@ DetailSailsStatResponse = _reflection.GeneratedProtocolMessageType('DetailSailsS
   })
 _sym_db.RegisterMessage(DetailSailsStatResponse)
 
+DebtorsRequest = _reflection.GeneratedProtocolMessageType('DebtorsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DEBTORSREQUEST,
+  '__module__' : 'market_pb2'
+  # @@protoc_insertion_point(class_scope:messenger.DebtorsRequest)
+  })
+_sym_db.RegisterMessage(DebtorsRequest)
+
+DebtorsResponse = _reflection.GeneratedProtocolMessageType('DebtorsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _DEBTORSRESPONSE,
+  '__module__' : 'market_pb2'
+  # @@protoc_insertion_point(class_scope:messenger.DebtorsResponse)
+  })
+_sym_db.RegisterMessage(DebtorsResponse)
+
+BuyerDeptsRequest = _reflection.GeneratedProtocolMessageType('BuyerDeptsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _BUYERDEPTSREQUEST,
+  '__module__' : 'market_pb2'
+  # @@protoc_insertion_point(class_scope:messenger.BuyerDeptsRequest)
+  })
+_sym_db.RegisterMessage(BuyerDeptsRequest)
+
+ProductItemRequest = _reflection.GeneratedProtocolMessageType('ProductItemRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PRODUCTITEMREQUEST,
+  '__module__' : 'market_pb2'
+  # @@protoc_insertion_point(class_scope:messenger.ProductItemRequest)
+  })
+_sym_db.RegisterMessage(ProductItemRequest)
+
 _GETCATEGORIES = DESCRIPTOR.services_by_name['GetCategories']
 _MANAGECATEGORY = DESCRIPTOR.services_by_name['ManageCategory']
 _GETBRANDSNAMES = DESCRIPTOR.services_by_name['GetBrandsNames']
@@ -328,6 +360,9 @@ _REMOVEPRODUCT = DESCRIPTOR.services_by_name['RemoveProduct']
 _PRODUCTITEMSSTAT = DESCRIPTOR.services_by_name['ProductItemsStat']
 _SAILSSTAT = DESCRIPTOR.services_by_name['SailsStat']
 _DETAILSAILSSTAT = DESCRIPTOR.services_by_name['DetailSailsStat']
+_DEBTORS = DESCRIPTOR.services_by_name['Debtors']
+_BUYERDEPTS = DESCRIPTOR.services_by_name['BuyerDepts']
+_PRODUCTITEMEDIT = DESCRIPTOR.services_by_name['ProductItemEdit']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
@@ -361,77 +396,91 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PRODUCTITEMSREQUEST._serialized_start=1665
   _PRODUCTITEMSREQUEST._serialized_end=1797
   _PRODUCTITEMRESPONSE._serialized_start=1800
-  _PRODUCTITEMRESPONSE._serialized_end=1974
-  _PRODUCTITEMSLISTRESPONSE._serialized_start=1976
-  _PRODUCTITEMSLISTRESPONSE._serialized_end=2064
-  _PRODUCTITEMCREATEREQUEST._serialized_start=2066
-  _PRODUCTITEMCREATEREQUEST._serialized_end=2182
-  _PRODUCTITEMSLISTCREATEREQUEST._serialized_start=2184
-  _PRODUCTITEMSLISTCREATEREQUEST._serialized_end=2284
-  _PRODUCTITEMSCREATERESPONSE._serialized_start=2286
-  _PRODUCTITEMSCREATERESPONSE._serialized_end=2359
-  _PRODUCTITEMBUYREQUEST._serialized_start=2362
-  _PRODUCTITEMBUYREQUEST._serialized_end=2572
-  _PRODUCTITEMBUYRESPONSE._serialized_start=2574
-  _PRODUCTITEMBUYRESPONSE._serialized_end=2615
-  _PRODUCTITEMREMOVEREQUEST._serialized_start=2617
-  _PRODUCTITEMREMOVEREQUEST._serialized_end=2660
-  _PRODUCTITEMREMOVERESPONSE._serialized_start=2662
-  _PRODUCTITEMREMOVERESPONSE._serialized_end=2706
-  _PRODUCTREMOVEREQUEST._serialized_start=2708
-  _PRODUCTREMOVEREQUEST._serialized_end=2750
-  _PRODUCTREMOVERESPONSE._serialized_start=2752
-  _PRODUCTREMOVERESPONSE._serialized_end=2792
-  _PRODUCTITEMSSTATREQUEST._serialized_start=2794
-  _PRODUCTITEMSSTATREQUEST._serialized_end=2858
-  _PRODUCTITEMSTATRESPONSE._serialized_start=2861
-  _PRODUCTITEMSTATRESPONSE._serialized_end=3154
-  _PRODUCTITEMSSTATRESPONSE._serialized_start=3156
-  _PRODUCTITEMSSTATRESPONSE._serialized_end=3237
-  _SAILSSTATREQUEST._serialized_start=3239
-  _SAILSSTATREQUEST._serialized_end=3296
-  _CATEGORYSAILSSTATRESPONSE._serialized_start=3298
-  _CATEGORYSAILSSTATRESPONSE._serialized_end=3380
-  _SALESMANCATEGORYSAILSSTATRESPONSE._serialized_start=3382
-  _SALESMANCATEGORYSAILSSTATRESPONSE._serialized_end=3487
-  _DATESAILSSTATRESPONSE._serialized_start=3489
-  _DATESAILSSTATRESPONSE._serialized_end=3586
-  _SAILSSTATRESPONSE._serialized_start=3588
-  _SAILSSTATRESPONSE._serialized_end=3660
-  _CATEGORYDETAILSAILSSTATRESPONSE._serialized_start=3663
-  _CATEGORYDETAILSAILSSTATRESPONSE._serialized_end=3836
-  _SALESMANCATEGORYDETAILSAILSSTATRESPONSE._serialized_start=3838
-  _SALESMANCATEGORYDETAILSAILSSTATRESPONSE._serialized_end=3955
-  _DATEDETAILSAILSSTATRESPONSE._serialized_start=3957
-  _DATEDETAILSAILSSTATRESPONSE._serialized_end=4066
-  _DETAILSAILSSTATRESPONSE._serialized_start=4068
-  _DETAILSAILSSTATRESPONSE._serialized_end=4152
-  _GETCATEGORIES._serialized_start=4154
-  _GETCATEGORIES._serialized_end=4243
-  _MANAGECATEGORY._serialized_start=4245
-  _MANAGECATEGORY._serialized_end=4344
-  _GETBRANDSNAMES._serialized_start=4346
-  _GETBRANDSNAMES._serialized_end=4428
-  _MANAGEBRANDSNAMES._serialized_start=4430
-  _MANAGEBRANDSNAMES._serialized_end=4528
-  _GETPRODUCTS._serialized_start=4530
-  _GETPRODUCTS._serialized_end=4616
-  _MANAGEPRODUCTS._serialized_start=4618
-  _MANAGEPRODUCTS._serialized_end=4712
-  _GETPRODUCTSITEMS._serialized_start=4714
-  _GETPRODUCTSITEMS._serialized_end=4819
-  _CREATEPRODUCTSITEMS._serialized_start=4821
-  _CREATEPRODUCTSITEMS._serialized_end=4944
-  _BUYPRODUCTITEM._serialized_start=4946
-  _BUYPRODUCTITEM._serialized_end=5048
-  _REMOVEPRODUCTITEM._serialized_start=5050
-  _REMOVEPRODUCTITEM._serialized_end=5164
-  _REMOVEPRODUCT._serialized_start=5166
-  _REMOVEPRODUCT._serialized_end=5267
-  _PRODUCTITEMSSTAT._serialized_start=5269
-  _PRODUCTITEMSSTAT._serialized_end=5382
-  _SAILSSTAT._serialized_start=5384
-  _SAILSSTAT._serialized_end=5469
-  _DETAILSAILSSTAT._serialized_start=5471
-  _DETAILSAILSSTAT._serialized_end=5574
+  _PRODUCTITEMRESPONSE._serialized_end=2018
+  _PRODUCTITEMSLISTRESPONSE._serialized_start=2020
+  _PRODUCTITEMSLISTRESPONSE._serialized_end=2108
+  _PRODUCTITEMCREATEREQUEST._serialized_start=2110
+  _PRODUCTITEMCREATEREQUEST._serialized_end=2226
+  _PRODUCTITEMSLISTCREATEREQUEST._serialized_start=2228
+  _PRODUCTITEMSLISTCREATEREQUEST._serialized_end=2328
+  _PRODUCTITEMSCREATERESPONSE._serialized_start=2330
+  _PRODUCTITEMSCREATERESPONSE._serialized_end=2403
+  _PRODUCTITEMBUYREQUEST._serialized_start=2406
+  _PRODUCTITEMBUYREQUEST._serialized_end=2616
+  _PRODUCTITEMBUYRESPONSE._serialized_start=2618
+  _PRODUCTITEMBUYRESPONSE._serialized_end=2659
+  _PRODUCTITEMREMOVEREQUEST._serialized_start=2661
+  _PRODUCTITEMREMOVEREQUEST._serialized_end=2704
+  _PRODUCTITEMREMOVERESPONSE._serialized_start=2706
+  _PRODUCTITEMREMOVERESPONSE._serialized_end=2750
+  _PRODUCTREMOVEREQUEST._serialized_start=2752
+  _PRODUCTREMOVEREQUEST._serialized_end=2794
+  _PRODUCTREMOVERESPONSE._serialized_start=2796
+  _PRODUCTREMOVERESPONSE._serialized_end=2836
+  _PRODUCTITEMSSTATREQUEST._serialized_start=2838
+  _PRODUCTITEMSSTATREQUEST._serialized_end=2902
+  _PRODUCTITEMSTATRESPONSE._serialized_start=2905
+  _PRODUCTITEMSTATRESPONSE._serialized_end=3198
+  _PRODUCTITEMSSTATRESPONSE._serialized_start=3200
+  _PRODUCTITEMSSTATRESPONSE._serialized_end=3281
+  _SAILSSTATREQUEST._serialized_start=3283
+  _SAILSSTATREQUEST._serialized_end=3340
+  _CATEGORYSAILSSTATRESPONSE._serialized_start=3342
+  _CATEGORYSAILSSTATRESPONSE._serialized_end=3424
+  _SALESMANCATEGORYSAILSSTATRESPONSE._serialized_start=3426
+  _SALESMANCATEGORYSAILSSTATRESPONSE._serialized_end=3531
+  _DATESAILSSTATRESPONSE._serialized_start=3533
+  _DATESAILSSTATRESPONSE._serialized_end=3630
+  _SAILSSTATRESPONSE._serialized_start=3632
+  _SAILSSTATRESPONSE._serialized_end=3704
+  _CATEGORYDETAILSAILSSTATRESPONSE._serialized_start=3707
+  _CATEGORYDETAILSAILSSTATRESPONSE._serialized_end=3880
+  _SALESMANCATEGORYDETAILSAILSSTATRESPONSE._serialized_start=3882
+  _SALESMANCATEGORYDETAILSAILSSTATRESPONSE._serialized_end=3999
+  _DATEDETAILSAILSSTATRESPONSE._serialized_start=4001
+  _DATEDETAILSAILSSTATRESPONSE._serialized_end=4110
+  _DETAILSAILSSTATRESPONSE._serialized_start=4112
+  _DETAILSAILSSTATRESPONSE._serialized_end=4196
+  _DEBTORSREQUEST._serialized_start=4198
+  _DEBTORSREQUEST._serialized_end=4214
+  _DEBTORSRESPONSE._serialized_start=4216
+  _DEBTORSRESPONSE._serialized_end=4250
+  _BUYERDEPTSREQUEST._serialized_start=4252
+  _BUYERDEPTSREQUEST._serialized_end=4286
+  _PRODUCTITEMREQUEST._serialized_start=4288
+  _PRODUCTITEMREQUEST._serialized_end=4355
+  _GETCATEGORIES._serialized_start=4357
+  _GETCATEGORIES._serialized_end=4446
+  _MANAGECATEGORY._serialized_start=4448
+  _MANAGECATEGORY._serialized_end=4547
+  _GETBRANDSNAMES._serialized_start=4549
+  _GETBRANDSNAMES._serialized_end=4631
+  _MANAGEBRANDSNAMES._serialized_start=4633
+  _MANAGEBRANDSNAMES._serialized_end=4731
+  _GETPRODUCTS._serialized_start=4733
+  _GETPRODUCTS._serialized_end=4819
+  _MANAGEPRODUCTS._serialized_start=4821
+  _MANAGEPRODUCTS._serialized_end=4915
+  _GETPRODUCTSITEMS._serialized_start=4917
+  _GETPRODUCTSITEMS._serialized_end=5022
+  _CREATEPRODUCTSITEMS._serialized_start=5024
+  _CREATEPRODUCTSITEMS._serialized_end=5147
+  _BUYPRODUCTITEM._serialized_start=5149
+  _BUYPRODUCTITEM._serialized_end=5251
+  _REMOVEPRODUCTITEM._serialized_start=5253
+  _REMOVEPRODUCTITEM._serialized_end=5367
+  _REMOVEPRODUCT._serialized_start=5369
+  _REMOVEPRODUCT._serialized_end=5470
+  _PRODUCTITEMSSTAT._serialized_start=5472
+  _PRODUCTITEMSSTAT._serialized_end=5585
+  _SAILSSTAT._serialized_start=5587
+  _SAILSSTAT._serialized_end=5672
+  _DETAILSAILSSTAT._serialized_start=5674
+  _DETAILSAILSSTAT._serialized_end=5777
+  _DEBTORS._serialized_start=5779
+  _DEBTORS._serialized_end=5856
+  _BUYERDEPTS._serialized_start=5858
+  _BUYERDEPTS._serialized_end=5953
+  _PRODUCTITEMEDIT._serialized_start=5955
+  _PRODUCTITEMEDIT._serialized_end=6056
 # @@protoc_insertion_point(module_scope)

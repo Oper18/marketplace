@@ -368,3 +368,10 @@ async def delete_product_item(item_pk: int):
 
 async def delete_product(product_pk: int):
     await Product.get(id=product_pk).delete()
+
+
+async def edit_product_item(product_item_pk: int, payed_amount: float):
+    pi = await ProductItems.get(id=product_item_pk)
+    pi.payed_amount = payed_amount
+    await pi.save()
+    return await pi.as_dict()

@@ -158,6 +158,8 @@ message ProductItemResponse {
   int64 salesman = 5;
   string rent_time_start = 6;
   string rent_time_stop = 7;
+  float payed_amount = 8;
+  int64 payment_type = 9;
 }
 
 message ProductItemsListResponse {
@@ -320,4 +322,31 @@ message DetailSailsStatResponse {
 
 service DetailSailsStat {
   rpc DetailSailsStat(SailsStatRequest) returns (DetailSailsStatResponse) {}
+}
+
+message DebtorsRequest {}
+
+message DebtorsResponse {
+  repeated int64 debtors = 1;
+}
+
+service Debtors {
+  rpc Debtors(DebtorsRequest) returns (DebtorsResponse) {}
+}
+
+message BuyerDeptsRequest {
+  int64 buyer = 1;
+}
+
+service BuyerDepts {
+  rpc BuyerDepts(BuyerDeptsRequest) returns (ProductItemsStatResponse) {}
+}
+
+message ProductItemRequest{
+  int64 product_item_pk = 1;
+  float payed_amount = 2;
+}
+
+service ProductItemEdit {
+  rpc ProductItemEdit(ProductItemRequest) returns (ProductItemResponse) {}
 }

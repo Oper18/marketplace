@@ -1,16 +1,13 @@
-from tortoise.expressions import Q
+from typing import List
+
+from tortoise.expressions import Q, F
 from tortoise.functions import Count
+from tortoise.queryset import QuerySet
 
 from models.models import ProductItems
 
 
-async def export_stat_xls(date_start, date_stop):
-    product_items = await ProductItems.filter(
-        updated_at__gte=date_start,
-        updated_at__lt=date_stop,
-        sold=True,
-    ).select_related("product")
-
+async def product_items_response_arr(product_items: QuerySet) -> List[dict]:
     lost_product_items = dict()
     sold_product_items = list()
     
@@ -48,4 +45,33 @@ async def export_stat_xls(date_start, date_stop):
         )
 
     return sold_product_items
+
+
+async def export_stat_xls(date_start, date_stop) -> List[dict]:
+    product_items = await ProductItems.filter(
+        updated_at__gte=date_start,
+        updated_at__lt=date_stop,
+        sold=True,
+    ).select_related("product")
+
+
+    return await product_items_response_arr(product_items=product_items)
+
+
+async def get_debtors_ids() -> List[int]:
+    return [
+        pi.buyer
+        for pi in await ProductItems.filter(product__price__gt=F("payed_amount"))
+        if pi.buyer
+    ]
+
+
+async def get_buyer_depts(buyer: int) -> List[dict]:
+    product_items = await ProductItems.filter(
+        buyer=buyer,
+        product__price__gt=F("payed_amount"),
+        sold=True,
+    ).select_related("product")
+
+    return await product_items_response_arr(product_items=product_items)
 

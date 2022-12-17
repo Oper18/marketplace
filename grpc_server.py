@@ -22,9 +22,14 @@ from v1.shop.manager import (
     buy_rent_product_item,
     delete_product_item,
     delete_product,
+    edit_product_item,
 )
 
-from v1.util import export_stat_xls
+from v1.util import (
+    export_stat_xls,
+    get_debtors_ids,
+    get_buyer_depts,
+)
 
 from statistic.handler import SailsStat
 
@@ -298,6 +303,39 @@ class DetailSailsStatServer(market_pb2_grpc.SailsStatServicer):
         return market_pb2.DetailSailsStatResponse(statistic=stat)
 
 
+class DebtorsServer(market_pb2_grpc.DebtorsServicer):
+    async def Debtors(
+        self,
+        request: market_pb2.DebtorsRequest,
+        context: grpc.aio.ServicerContext,
+    ) -> market_pb2.DebtorsResponse:
+        debtors = await get_debtors_ids()
+        return market_pb2.DebtorsResponse(debtors=debtors)
+
+
+class BuyerDeptsServer(market_pb2_grpc.BuyerDeptsServicer):
+    async def BuyerDepts(
+        self,
+        request: market_pb2.BuyerDeptsRequest,
+        context: grpc.aio.ServicerContext,
+    ) -> market_pb2.ProductItemsStatResponse:
+        debts = await get_buyer_depts(buyer=request.buyer)
+        return market_pb2.ProductItemsStatResponse(statistic=debts)
+
+
+class ProductItemEditServer(market_pb2_grpc.ProductItemEditServicer):
+    async def ProductItemEdit(
+        self,
+        request: market_pb2.ProductItemRequest,
+        context: grpc.aio.ServicerContext,
+    ) -> market_pb2.ProductItemRemoveResponse:
+        product_item = await edit_product_item(
+            product_item_pk=request.product_item_pk,
+            payed_amount=request.payed_amount,
+        )
+        return market_pb2.ProductItemResponse(**product_item)
+
+
 async def serve() -> None:
     await Tortoise.init(
         db_url="postgres://{}:{}@{}:5432/{}".format(
@@ -351,6 +389,15 @@ async def serve() -> None:
     )
     market_pb2_grpc.add_DetailSailsStatServicer_to_server(
         DetailSailsStatServer(), server
+    )
+    market_pb2_grpc.add_DebtorsServicer_to_server(
+        DebtorsServer(), server
+    )
+    market_pb2_grpc.add_BuyerDeptsServicer_to_server(
+        BuyerDeptsServer(), server
+    )
+    market_pb2_grpc.add_ProductItemEditServicer_to_server(
+        ProductItemEditServer(), server
     )
 
     listen_addr = '[::]:50051'
