@@ -31,7 +31,7 @@ from v1.util import (
     get_buyer_depts,
 )
 
-from statistic.handler import SailsStat
+from statistic.handler import SailsStat as SailsStatObj
 
 from settings import DATABASE
 
@@ -279,7 +279,7 @@ class SailsStatServer(market_pb2_grpc.SailsStatServicer):
         request: market_pb2.SailsStatRequest,
         context: grpc.aio.ServicerContext,
     ) -> market_pb2.SailsStatResponse:
-        stat_obj = SailsStat(
+        stat_obj = SailsStatObj(
             date_start=request.date_start,
             date_stop=request.date_stop,
         )
@@ -293,7 +293,7 @@ class DetailSailsStatServer(market_pb2_grpc.SailsStatServicer):
         request: market_pb2.SailsStatRequest,
         context: grpc.aio.ServicerContext,
     ) -> market_pb2.DetailSailsStatResponse:
-        stat_obj = DetailSailsStat(
+        stat_obj = SailsStatObj(
             date_start=request.date_start,
             date_stop=request.date_stop,
             detail=True,

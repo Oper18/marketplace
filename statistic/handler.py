@@ -59,7 +59,7 @@ class SailsStat(object):
         data.pop("salesman", None)
         data["product"] = product.name
         data["price"] = (
-            float(product.price) - float(product.price) * float(product.discount)
+            float(product.price) - float(product.price) * float(product.discount) / 100 
         ) / len(categories)
         return data, categories
 
