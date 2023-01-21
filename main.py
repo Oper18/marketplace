@@ -2,7 +2,7 @@
 
 import os
 import uvicorn
-from aioredis import Redis
+from aioredis import Redis, from_url
 import uuid
 
 from starlette.middleware.cors import CORSMiddleware
@@ -24,8 +24,6 @@ from starlette.responses import RedirectResponse
 from starlette.status import HTTP_303_SEE_OTHER, HTTP_401_UNAUTHORIZED
 
 from tortoise.contrib.fastapi import register_tortoise
-
-import aioredis
 
 from settings import DATABASE, BASEDIR, REDIS
 
@@ -172,7 +170,7 @@ def create_app():
 
     @_app.on_event("startup")
     async def startup():
-        redis = await aioredis.from_url("redis://{}:6379/0".format(REDIS), encoding="utf8")
+        redis = await from_url("redis://{}:6379/0".format(REDIS), encoding="utf8")
         await admin_app.configure(
             logo_url="https://preview.tabler.io/static/logo-white.svg",
             template_folders=[os.path.join(BASEDIR, "templates")],
