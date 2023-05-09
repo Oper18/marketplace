@@ -1,6 +1,6 @@
 aerich
 aiofiles
-aioredis
+git+https://github.com/Oper18/aioredis-py.git
 aiosqlite
 asgiref
 async-timeout
