@@ -234,9 +234,9 @@ async def manage_product(
     gallery: List[dict] = [],
     exist_gallery: List[int] = [],
     size: Optional[str] = None,
-):
+) -> dict:
     if not id and not brand_name:
-        return None
+        return {}
 
     update_fields = {}
     if brand_name:
