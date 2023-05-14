@@ -351,7 +351,7 @@ async def buy_rent_product_item(
         product_item.rent_time_start = dateutil.parser.parse(rent_time_start)
         product_item.rent_time_stop = dateutil.parser.parse(rent_time_stop)
 
-    if not payed_amount:
+    if payed_amount is None:
         product = await product_item.product
         payed_amount = product.price
 
