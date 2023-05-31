@@ -163,8 +163,11 @@ async def get_product_items(
             )
         )
 
-    items = await items.all().limit(limit).offset(offset).order_by('rent_time_start')
+    if limit:
+        items = items.limit(limit).offset(offset)
 
+    items = await items.all().order_by('rent_time_start')
+    
     return {
         "count": count,
         "items": [await i.as_dict() for i in items]
