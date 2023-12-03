@@ -338,13 +338,26 @@ class ProductItemEditServer(market_pb2_grpc.ProductItemEditServicer):
 
 async def serve() -> None:
     await Tortoise.init(
-        db_url="postgres://{}:{}@{}:5432/{}".format(
-            DATABASE["user"],
-            DATABASE["password"],
-            DATABASE["address"],
-            DATABASE["name"],
-        ),
-        modules={"models": ["models.models", "aerich.models"]},
+        config={
+            "connections": {
+                "default": {
+                    "engine": "tortoise.backends.asyncpg",
+                    "credentials": {
+                        "database": DATABASE["name"],
+                        "host": DATABASE["address"],
+                        "password": DATABASE["password"],
+                        "port": 5432,
+                        "user": DATABASE["user"],
+                    },
+                }
+            },
+            "apps": {
+                "models": {
+                    "models": ["models.models", "aerich.models"],
+                    "default_connection": "default",
+                }
+            },
+        },
     )
     server = grpc.aio.server()
 
